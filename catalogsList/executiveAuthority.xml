@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<catalogs xmlns="http://rosleshoz.gov.ru/catalogs" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<executiveAuthority>
+		<element  id="66" name="Министерство природных ресурсов и экологии Свердловской области"/>
+	</executiveAuthority>	
+</catalogs>

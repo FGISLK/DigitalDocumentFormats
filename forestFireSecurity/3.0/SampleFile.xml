@@ -1,0 +1,89 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Created with Liquid XML 2013 Designer Edition 11.1.0.4725 (http://www.liquid-technologies.com) -->
+<forestFireSecurity xmlns:ns="http://rosleshoz.gov.ru/xmlns/sTypes" xmlns:ns1="http://rosleshoz.gov.ru/xmlns/cTypes" xmlns="http://rosleshoz.gov.ru/xmlns/forestFireSecurity" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://rosleshoz.gov.ru/xmlns/forestFireSecurity ">
+    <serviceInfo>
+        <ns1:provider>string</ns1:provider>
+        <ns1:version>3.0</ns1:version>
+        <ns1:guid>51a51362-192a-45c6-8947-33e97f420dbf</ns1:guid>
+    </serviceInfo>
+    <header>
+        <subject id="string" name="string" />
+        <executiveAuthority id="string" name="string" />
+        <period>
+            <ns1:begin>1990-08-13</ns1:begin>
+            <ns1:end>2004-10-13</ns1:end>
+        </period>
+        <partner>
+            <ns1:physicalPerson>
+                <ns1:first_name>string</ns1:first_name>
+                <ns1:last_name>string</ns1:last_name>
+                <ns1:identity_document>
+                    <ns1:name>string</ns1:name>
+                    <ns1:series>string</ns1:series>
+                    <ns1:number>string</ns1:number>
+                </ns1:identity_document>
+                <ns1:inn>526317984689</ns1:inn>
+            </ns1:physicalPerson>
+            <ns1:phone>string</ns1:phone>
+        </partner>
+        <signerData>
+            <ns1:employee>
+                <ns1:first_name>string</ns1:first_name>
+                <ns1:last_name>string</ns1:last_name>
+                <ns1:post>string</ns1:post>
+                <ns1:phone>string</ns1:phone>
+            </ns1:employee>
+            <ns1:date>2016-07-15</ns1:date>
+        </signerData>
+        <contract>
+            <ns1:type>string</ns1:type>
+            <ns1:number>б/н</ns1:number>
+            <ns1:date>2016-07-15</ns1:date>
+            <ns1:usageType id="string" name="string" />
+            <ns1:approvingProject>string</ns1:approvingProject>
+        </contract>
+    </header>
+    <fireSecurity>
+        <row>
+            <numberLine>string</numberLine>
+            <reportRate name="string" />
+            <codeLine>string</codeLine>
+            <location>
+                <ns1:forestry name="string" />
+                <ns1:subforestry id="string" name="string" />
+                <ns1:tract name="string" />
+                <ns1:quarter>1</ns1:quarter>
+                <ns1:taxationUnit>1</ns1:taxationUnit>
+            </location>
+            <unitType id="string" name="string" />
+            <value>0.00</value>
+        </row>
+        <row>
+            <numberLine>string</numberLine>
+            <reportRate name="string" />
+            <codeLine>string</codeLine>
+            <location>
+                <ns1:forestry name="string" />
+                <ns1:subforestry name="string" />
+                <ns1:quarter>1</ns1:quarter>
+                <ns1:taxationUnit>1</ns1:taxationUnit>
+                <ns1:cuttingArea>string</ns1:cuttingArea>
+            </location>
+            <unitType id="string" name="string" />
+            <value>0.00</value>
+        </row>
+        <row>
+            <numberLine>string</numberLine>
+            <reportRate id="string" name="string" />
+            <codeLine>string</codeLine>
+            <location>
+                <ns1:forestry name="string" />
+                <ns1:subforestry name="string" />
+                <ns1:quarter>1</ns1:quarter>
+                <ns1:taxationUnit>1</ns1:taxationUnit>
+            </location>
+            <unitType id="string" name="string" />
+            <value>0.00</value>
+        </row>
+    </fireSecurity>
+</forestFireSecurity>

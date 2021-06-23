@@ -1,0 +1,139 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<!--Created with Liquid XML 2013 Designer Edition 11.1.0.4725 (http://www.liquid-technologies.com)-->
+<xs:schema xmlns:ns0="http://rosleshoz.gov.ru/xmlns/sTypes"
+           xmlns:ns1="http://rosleshoz.gov.ru/xmlns/cTypes"
+           elementFormDefault="qualified"
+           targetNamespace="http://rosleshoz.gov.ru/xmlns/forestReproduction"
+           version="3.0"
+           xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:import schemaLocation=".\sTypes.xsd"
+               namespace="http://rosleshoz.gov.ru/xmlns/sTypes" />
+    <xs:import schemaLocation=".\cTypes.xsd"
+               namespace="http://rosleshoz.gov.ru/xmlns/cTypes" />
+    <xs:element xmlns:q1="http://rosleshoz.gov.ru/xmlns/forestReproduction"
+                name="forestReproduction"
+                type="q1:forestReproduction" />
+    <xs:complexType name="forestReproduction">
+        <xs:sequence>
+            <xs:element name="serviceInfo"
+                        type="ns1:serviceInfo" />
+            <xs:element name="header">
+                <xs:annotation>
+                    <xs:documentation>Общие сведения об отчете</xs:documentation>
+                </xs:annotation>
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element xmlns:q2="forestUsageReport"
+                                    name="executiveAuthority"
+                                    type="ns1:reference">
+                            <xs:annotation>
+                                <xs:documentation>Наименование органа государственной власти, органа местного самоуправления</xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                        <xs:element xmlns:q3="forestUsageReport"
+                                    name="period"
+                                    type="ns1:period">
+                            <xs:annotation>
+                                <xs:documentation>Период действия документа</xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                        <xs:element xmlns:q4="forestUsageReport"
+                                    name="partner"
+                                    type="ns1:partner">
+                            <xs:annotation>
+                                <xs:documentation>Отправитель документа</xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                        <xs:element name="signerData"
+                                    type="ns1:signerData">
+                            <xs:annotation>
+                                <xs:documentation>Подписант документа</xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                        <xs:element xmlns:q5="forestUsageReport"
+                                    name="contract"
+                                    type="ns1:contract">
+                            <xs:annotation>
+                                <xs:documentation>Договор</xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="reproduction">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element xmlns:q1="http://rosleshoz.gov.ru/xmlns/forestReproduction"
+                                    name="row"
+                                    type="q1:row"
+                                    minOccurs="0"
+                                    maxOccurs="unbounded" />
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="row">
+        <xs:sequence>
+            <xs:element name="numberLine"
+                        type="xs:string">
+                <xs:annotation>
+                    <xs:documentation>№ п/п</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="reportRate"
+                        type="ns1:reference">
+                <xs:annotation>
+                    <xs:documentation>Показатель отчета</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="codeLine"
+                        type="xs:string">
+                <xs:annotation>
+                    <xs:documentation>Код строки</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="tree"
+                        type="ns1:reference"
+                        minOccurs="0">
+                <xs:annotation>
+                    <xs:documentation>Порода (Указывается элемент справочника "Породы древесины")</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element xmlns:q9="forestUsageReport"
+                        name="location"
+                        type="ns1:location">
+                <xs:annotation>
+                    <xs:documentation>В поле taxationUnit может присутствовать только одно значение (без перечисления через запятую или тире)</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element xmlns:q6="forestUsageReport"
+                        name="unitType"
+                        type="ns1:reference">
+                <xs:annotation>
+                    <xs:documentation>Единица измерения</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element xmlns:q17="forestUsageReport"
+                        name="value"
+                        type="ns0:forestUsageVolume"
+                        default="0.00">
+                <xs:annotation>
+                    <xs:documentation>Объем выполненных мероприятий</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="note"
+                        minOccurs="0">
+                <xs:annotation>
+                    <xs:documentation>Примечание</xs:documentation>
+                </xs:annotation>
+                <xs:simpleType>
+                    <xs:restriction base="xs:string">
+                        <xs:minLength value="0" />
+                        <xs:maxLength value="300" />
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:element>
+        </xs:sequence>
+    </xs:complexType>
+</xs:schema>

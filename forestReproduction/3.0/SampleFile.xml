@@ -1,0 +1,58 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Created with Liquid XML 2013 Designer Edition 11.1.0.4725 (http://www.liquid-technologies.com) -->
+<forestReproduction xmlns:ns="http://rosleshoz.gov.ru/xmlns/sTypes" xmlns:ns1="http://rosleshoz.gov.ru/xmlns/cTypes" xmlns="http://rosleshoz.gov.ru/xmlns/forestReproduction" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://rosleshoz.gov.ru/xmlns/forestReproduction ">
+    <serviceInfo>
+        <ns1:provider>string</ns1:provider>
+        <ns1:version>3.0</ns1:version>
+        <ns1:guid>51a51362-192a-45c6-8947-33e97f420dbf</ns1:guid>
+    </serviceInfo>
+    <header>
+        <executiveAuthority id="string" name="string" />
+        <period>
+            <ns1:begin>2013-12-22</ns1:begin>
+            <ns1:end>2018-01-14</ns1:end>
+        </period>
+        <partner>
+            <ns1:juridicalPerson>
+                <ns1:name>string</ns1:name>
+                <ns1:inn>0256017902</ns1:inn>
+                <ns1:ogrn>1060256009835</ns1:ogrn>
+                <ns1:address>string</ns1:address>
+            </ns1:juridicalPerson>
+            <ns1:phone>string</ns1:phone>
+        </partner>
+        <signerData>
+            <ns1:employee>
+                <ns1:first_name>string</ns1:first_name>
+                <ns1:last_name>string</ns1:last_name>
+                <ns1:post>string</ns1:post>
+                <ns1:basisAuthority>string</ns1:basisAuthority>
+                <ns1:phone>string</ns1:phone>
+            </ns1:employee>
+            <ns1:organization>string</ns1:organization>
+        </signerData>
+        <contract>
+            <ns1:type>string</ns1:type>
+            <ns1:number>б/н</ns1:number>
+            <ns1:date>2016-07-15</ns1:date>
+            <ns1:approvingProject>string</ns1:approvingProject>
+        </contract>
+    </header>
+    <reproduction>
+        <row>
+            <numberLine>string</numberLine>
+            <reportRate id="string" name="string" />
+            <codeLine>string</codeLine>
+            <location>
+                <ns1:forestry id="string" name="string" />
+                <ns1:subforestry name="string" />
+                <ns1:tract name="string" />
+                <ns1:quarter>1</ns1:quarter>
+                <ns1:taxationUnit>1</ns1:taxationUnit>
+            </location>
+            <unitType id="string" name="string" />
+            <value>0.00</value>
+            <note>string</note>
+        </row>
+    </reproduction>
+</forestReproduction>

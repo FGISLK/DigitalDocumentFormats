@@ -1,0 +1,160 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Created with Liquid XML 2013 Designer Edition 11.1.0.4725 (http://www.liquid-technologies.com) -->
+<forestUsageReport xmlns:ns="http://rosleshoz.gov.ru/xmlns/sTypes" xmlns:ns1="http://rosleshoz.gov.ru/xmlns/cTypes" xmlns="http://rosleshoz.gov.ru/xmlns/forestUsageReport" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://rosleshoz.gov.ru/xmlns/forestUsageReport">
+    <serviceInfo>
+        <ns1:provider>string</ns1:provider>
+        <ns1:version>3.0</ns1:version>
+    </serviceInfo>
+    <header>
+        <executiveAuthority id="string" name="string" />
+        <partner>
+            <ns1:individualEntrepreneur>
+                <ns1:first_name>string</ns1:first_name>
+                <ns1:last_name>string</ns1:last_name>
+                <ns1:identity_document>
+                    <ns1:name>string</ns1:name>
+                    <ns1:series>string</ns1:series>
+                    <ns1:number>string</ns1:number>
+                </ns1:identity_document>
+                <ns1:ogrn>1060256009835</ns1:ogrn>
+                <ns1:inn>526317984689</ns1:inn>
+            </ns1:individualEntrepreneur>
+            <ns1:phone>string</ns1:phone>
+        </partner>
+        <period>
+            <ns1:begin>2001-05-20</ns1:begin>
+            <ns1:end>1999-12-14</ns1:end>
+        </period>
+        <contract>
+            <ns1:type>string</ns1:type>
+            <ns1:number>б/н</ns1:number>
+            <ns1:date>2016-07-15</ns1:date>
+            <ns1:usageType id="string" name="string" />
+            <ns1:usageType name="string" />
+            <ns1:usageType name="string" />
+            <ns1:approvingProject>string</ns1:approvingProject>
+        </contract>
+        <signerData>
+            <ns1:employee>
+                <ns1:first_name>string</ns1:first_name>
+                <ns1:last_name>string</ns1:last_name>
+                <ns1:patronimic_name>string</ns1:patronimic_name>
+                <ns1:post>string</ns1:post>
+                <ns1:basisAuthority>string</ns1:basisAuthority>
+                <ns1:phone>string</ns1:phone>
+            </ns1:employee>
+            <ns1:date>2016-07-15</ns1:date>
+            <ns1:organization>string</ns1:organization>
+        </signerData>
+    </header>
+    <woodHarvesting>
+        <row>
+            <location>
+                <ns1:forestry id="string" name="string" />
+                <ns1:subforestry id="string" name="string" />
+                <ns1:quarter>1</ns1:quarter>
+                <ns1:taxationUnit>1</ns1:taxationUnit>
+            </location>
+            <areaSquare>0.0000</areaSquare>
+            <areaCutting>5300460000.2349</areaCutting>
+            <farm>Мягколиственное</farm>
+            <formCutting>Выборочная рубка</formCutting>
+            <typeCutting id="string" name="string" />
+            <wood name="string" />
+            <sortiment name="string" />
+            <value>0.00</value>
+            <note>string</note>
+        </row>
+    </woodHarvesting>
+    <notWoodHarvesting>
+        <row>
+            <usageType name="string" />
+            <location>
+                <ns1:forestry name="string" />
+                <ns1:subforestry name="string" />
+                <ns1:tract id="string" name="string" />
+                <ns1:quarter>1</ns1:quarter>
+                <ns1:taxationUnit>1</ns1:taxationUnit>
+                <ns1:cuttingArea>string</ns1:cuttingArea>
+            </location>
+            <area>5177480000.2349</area>
+        </row>
+        <row>
+            <usageType name="string" />
+            <location>
+                <ns1:forestry id="string" name="string" />
+                <ns1:subforestry name="string" />
+                <ns1:quarter>1</ns1:quarter>
+                <ns1:taxationUnit>1</ns1:taxationUnit>
+                <ns1:cuttingArea>string</ns1:cuttingArea>
+            </location>
+            <area>6652310000.2348</area>
+        </row>
+    </notWoodHarvesting>
+    <measure>
+        <row>
+            <measure id="string" name="string" />
+            <object id="string" name="string" />
+            <location>
+                <ns1:forestry name="string" />
+                <ns1:subforestry id="string" name="string" />
+                <ns1:tract name="string" />
+                <ns1:quarter>1</ns1:quarter>
+                <ns1:taxationUnit>1</ns1:taxationUnit>
+                <ns1:cuttingArea>string</ns1:cuttingArea>
+            </location>
+            <area>5241160000.2349</area>
+            <farm>Твердолиственное</farm>
+            <sortiment id="string" name="string" />
+            <commercialValue>2117880.23</commercialValue>
+        </row>
+        <row>
+            <measure id="string" name="string" />
+            <object id="string" name="string" />
+            <location>
+                <ns1:forestry name="string" />
+                <ns1:subforestry name="string" />
+                <ns1:quarter>1</ns1:quarter>
+                <ns1:taxationUnit>1</ns1:taxationUnit>
+                <ns1:cuttingArea>string</ns1:cuttingArea>
+            </location>
+            <area>8686990000.2348</area>
+            <typeCutting name="string" />
+            <wood name="string" />
+        </row>
+        <row>
+            <measure name="string" />
+            <object name="string" />
+            <location>
+                <ns1:forestry name="string" />
+                <ns1:subforestry name="string" />
+                <ns1:quarter>1</ns1:quarter>
+                <ns1:taxationUnit>1</ns1:taxationUnit>
+                <ns1:cuttingArea>string</ns1:cuttingArea>
+            </location>
+            <area>7174490000.2348</area>
+            <farm>Твердолиственное</farm>
+            <typeCutting name="string" />
+            <sortiment id="string" name="string" />
+            <value>4926170.23</value>
+        </row>
+    </measure>
+    <attachments>
+        <ns1:file>
+            <ns1:id>string</ns1:id>
+            <ns1:name>string</ns1:name>
+            <ns1:signature>YTM0NZomIzI2OTsmIzM0NTueYQ==</ns1:signature>
+        </ns1:file>
+        <ns1:file>
+            <ns1:id>string</ns1:id>
+            <ns1:name>string</ns1:name>
+            <ns1:extension>string</ns1:extension>
+        </ns1:file>
+        <ns1:file>
+            <ns1:id>string</ns1:id>
+            <ns1:name>string</ns1:name>
+            <ns1:extension>string</ns1:extension>
+            <ns1:signature>YTM0NZomIzI2OTsmIzM0NTueYQ==</ns1:signature>
+        </ns1:file>
+    </attachments>
+</forestUsageReport>

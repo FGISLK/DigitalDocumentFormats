@@ -1,0 +1,164 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Created with Liquid XML 2013 Designer Edition 11.1.0.4725 (http://www.liquid-technologies.com) -->
+<forestProtection xmlns:ns="http://rosleshoz.gov.ru/xmlns/sTypes" xmlns:ns1="http://rosleshoz.gov.ru/xmlns/cTypes" xmlns="http://rosleshoz.gov.ru/xmlns/forestProtection" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://rosleshoz.gov.ru/xmlns/forestProtection ">
+    <serviceInfo>
+        <ns1:provider>string</ns1:provider>
+        <ns1:version>3.0</ns1:version>
+    </serviceInfo>
+    <date>2016-07-15</date>
+    <header>
+        <subject id="string" name="string" />
+        <municipalDistrict>string</municipalDistrict>
+        <executiveAuthority id="string" name="string" />
+        <period>
+            <ns1:begin>2004-09-18</ns1:begin>
+            <ns1:end>2006-04-22</ns1:end>
+        </period>
+        <partner>
+            <ns1:juridicalPerson>
+                <ns1:name>string</ns1:name>
+                <ns1:inn>0256017902</ns1:inn>
+                <ns1:ogrn>1060256009835</ns1:ogrn>
+                <ns1:address>string</ns1:address>
+            </ns1:juridicalPerson>
+            <ns1:phone>string</ns1:phone>
+        </partner>
+        <signerData>
+            <ns1:employee>
+                <ns1:first_name>string</ns1:first_name>
+                <ns1:last_name>string</ns1:last_name>
+                <ns1:patronimic_name>string</ns1:patronimic_name>
+                <ns1:post>string</ns1:post>
+            </ns1:employee>
+            <ns1:date>2016-07-15</ns1:date>
+        </signerData>
+        <contract>
+            <ns1:type>string</ns1:type>
+            <ns1:number>б/н</ns1:number>
+            <ns1:date>2016-07-15</ns1:date>
+            <ns1:usageType id="string" name="string" />
+            <ns1:usageType id="string" name="string" />
+            <ns1:usageType name="string" />
+            <ns1:usageType name="string" />
+            <ns1:registrationNumber>string</ns1:registrationNumber>
+        </contract>
+    </header>
+    <pathologicalExamination>
+        <row>
+            <numberLine>string</numberLine>
+            <reportRate name="string" />
+            <codeLine>string</codeLine>
+            <location>
+                <ns1:forestry id="string" name="string" />
+                <ns1:subforestry name="string" />
+                <ns1:tract id="string" name="string" />
+                <ns1:quarter>1</ns1:quarter>
+                <ns1:taxationUnit>1</ns1:taxationUnit>
+            </location>
+            <unitType name="string" />
+            <value>0.00</value>
+        </row>
+        <row>
+            <numberLine>string</numberLine>
+            <reportRate name="string" />
+            <codeLine>string</codeLine>
+            <location>
+                <ns1:forestry id="string" name="string" />
+                <ns1:subforestry id="string" name="string" />
+                <ns1:quarter>1</ns1:quarter>
+                <ns1:taxationUnit>1</ns1:taxationUnit>
+                <ns1:cuttingArea>string</ns1:cuttingArea>
+            </location>
+            <unitType name="string" />
+            <value>0.00</value>
+        </row>
+    </pathologicalExamination>
+    <prevention>
+        <row>
+            <numberLine>string</numberLine>
+            <reportRate name="string" />
+            <codeLine>string</codeLine>
+            <location>
+                <ns1:forestry name="string" />
+                <ns1:subforestry name="string" />
+                <ns1:tract name="string" />
+                <ns1:quarter>1</ns1:quarter>
+                <ns1:taxationUnit>1</ns1:taxationUnit>
+            </location>
+            <unitType id="string" name="string" />
+            <value>0.00</value>
+        </row>
+        <row>
+            <numberLine>string</numberLine>
+            <reportRate id="string" name="string" />
+            <codeLine>string</codeLine>
+            <location>
+                <ns1:forestry name="string" />
+                <ns1:subforestry name="string" />
+                <ns1:tract id="string" name="string" />
+                <ns1:quarter>1</ns1:quarter>
+                <ns1:taxationUnit>1</ns1:taxationUnit>
+            </location>
+            <unitType name="string" />
+            <value>0.00</value>
+        </row>
+        <row>
+            <numberLine>string</numberLine>
+            <reportRate name="string" />
+            <codeLine>string</codeLine>
+            <location>
+                <ns1:forestry id="string" name="string" />
+                <ns1:subforestry id="string" name="string" />
+                <ns1:tract id="string" name="string" />
+                <ns1:quarter>1</ns1:quarter>
+                <ns1:taxationUnit>1</ns1:taxationUnit>
+            </location>
+            <unitType name="string" />
+            <value>0.00</value>
+        </row>
+    </prevention>
+    <liquidation>
+        <row>
+            <numberLine>string</numberLine>
+            <reportRate name="string" />
+            <codeLine>string</codeLine>
+            <location>
+                <ns1:forestry id="string" name="string" />
+                <ns1:subforestry id="string" name="string" />
+                <ns1:quarter>1</ns1:quarter>
+                <ns1:taxationUnit>1</ns1:taxationUnit>
+            </location>
+            <unitType name="string" />
+            <value>0.00</value>
+        </row>
+        <row>
+            <numberLine>string</numberLine>
+            <reportRate name="string" />
+            <codeLine>string</codeLine>
+            <location>
+                <ns1:forestry name="string" />
+                <ns1:subforestry name="string" />
+                <ns1:tract name="string" />
+                <ns1:quarter>1</ns1:quarter>
+                <ns1:taxationUnit>1</ns1:taxationUnit>
+            </location>
+            <unitType name="string" />
+            <value>0.00</value>
+        </row>
+        <row>
+            <numberLine>string</numberLine>
+            <reportRate id="string" name="string" />
+            <codeLine>string</codeLine>
+            <location>
+                <ns1:forestry id="string" name="string" />
+                <ns1:subforestry name="string" />
+                <ns1:tract id="string" name="string" />
+                <ns1:quarter>1</ns1:quarter>
+                <ns1:taxationUnit>1</ns1:taxationUnit>
+                <ns1:cuttingArea>string</ns1:cuttingArea>
+            </location>
+            <unitType id="string" name="string" />
+            <value>0.00</value>
+        </row>
+    </liquidation>
+</forestProtection>

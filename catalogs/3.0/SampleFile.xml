@@ -1,0 +1,163 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Created with Liquid XML 2013 Designer Edition 11.1.0.4725 (http://www.liquid-technologies.com) -->
+<catalog xmlns:ns="http://rosleshoz.gov.ru/xmlns/sTypes" xmlns:nsc="http://rosleshoz.gov.ru/xmlns/catalogsTypes" xmlns:ns1="http://rosleshoz.gov.ru/xmlns/cTypes" xmlns="http://rosleshoz.gov.ru/xmlns/catalogs" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://rosleshoz.gov.ru/xmlns/catalogs ">
+    <subject>
+        <element id="string" name="string" />
+        <element id="string" name="string" />
+    </subject>
+    <executiveAuthority>
+        <element id="string" name="string" />
+        <element id="string" name="string" />
+        <element id="string" name="string" />
+        <element id="string" name="string" />
+        <element id="string" name="string" />
+    </executiveAuthority>
+    <forestry>
+        <element id="string" name="string">
+            <nsc:executiveAuthority id="string" name="string" />
+        </element>
+        <element id="string" name="string">
+            <nsc:executiveAuthority name="string" />
+        </element>
+    </forestry>
+    <subforestry>
+        <element id="string" name="string">
+            <nsc:forestry id="string" name="string" />
+            <nsc:executiveAuthority name="string" />
+        </element>
+    </subforestry>
+    <tract>
+        <element id="string" name="string">
+            <nsc:subforestry name="string" />
+            <nsc:executiveAuthority name="string" />
+        </element>
+        <element id="string" name="string">
+            <nsc:subforestry id="string" name="string" />
+            <nsc:executiveAuthority name="string" />
+        </element>
+        <element id="string" name="string">
+            <nsc:subforestry id="string" name="string" />
+            <nsc:executiveAuthority name="string" />
+        </element>
+        <element id="string" name="string">
+            <nsc:subforestry id="string" name="string" />
+            <nsc:executiveAuthority id="string" name="string" />
+        </element>
+        <element id="string" name="string">
+            <nsc:subforestry name="string" />
+            <nsc:executiveAuthority id="string" name="string" />
+        </element>
+    </tract>
+    <tree>
+        <element id="string" name="string">
+            <nsc:executiveAuthority name="string" />
+            <nsc:abbreviation>string</nsc:abbreviation>
+        </element>
+        <element id="string" name="string">
+            <nsc:executiveAuthority id="string" name="string" />
+            <nsc:abbreviation>string</nsc:abbreviation>
+        </element>
+        <element id="string" name="string">
+            <nsc:executiveAuthority name="string" />
+            <nsc:abbreviation>string</nsc:abbreviation>
+        </element>
+        <element id="string" name="string">
+            <nsc:executiveAuthority id="string" name="string" />
+            <nsc:abbreviation>string</nsc:abbreviation>
+        </element>
+        <element id="string" name="string">
+            <nsc:executiveAuthority name="string" />
+            <nsc:abbreviation>string</nsc:abbreviation>
+        </element>
+    </tree>
+    <wood />
+    <sortiment>
+        <element id="string" name="string">
+            <nsc:wood id="string" name="string" />
+        </element>
+        <element id="string" name="string">
+            <nsc:wood name="string" />
+        </element>
+        <element id="string" name="string">
+            <nsc:wood id="string" name="string" />
+        </element>
+        <element id="string" name="string">
+            <nsc:wood id="string" name="string" />
+        </element>
+    </sortiment>
+    <typeCutting>
+        <element id="string" name="string" />
+        <element id="string" name="string" />
+        <element id="string" name="string" />
+        <element id="string" name="string" />
+    </typeCutting>
+    <unitType />
+    <usageType>
+        <element id="string" name="string" />
+        <element id="string" name="string" />
+        <element id="string" name="string" />
+    </usageType>
+    <resource>
+        <element id="string" name="string">
+            <nsc:usageType id="string" name="string" />
+        </element>
+        <element id="string" name="string">
+            <nsc:usageType id="string" name="string" />
+        </element>
+        <element id="string" name="string">
+            <nsc:usageType name="string" />
+        </element>
+    </resource>
+    <measure>
+        <element id="string" name="string">
+            <nsc:usageType name="string" />
+        </element>
+        <element id="string" name="string">
+            <nsc:usageType name="string" />
+        </element>
+        <element id="string" name="string">
+            <nsc:usageType name="string" />
+        </element>
+    </measure>
+    <object>
+        <element typeObject="Объекты, не связанные с созданием лесной инфраструктуры" id="string" name="string" />
+        <element typeObject="Объекты, не связанные с созданием лесной инфраструктуры" id="string" name="string" />
+    </object>
+    <specialPurpose>
+        <element id="string" name="string" />
+        <element id="string" name="string" />
+        <element id="string" name="string" />
+        <element id="string" name="string" />
+    </specialPurpose>
+    <protectionCategory />
+    <reportRate>
+        <element id="string" name="string">
+            <nsc:reportRateType>Ликвидация очагов вредных организмов</nsc:reportRateType>
+            <nsc:parent id="string" name="string" />
+            <nsc:unitType id="string" name="string" />
+        </element>
+    </reportRate>
+    <damageReason>
+        <element id="string" name="string" />
+    </damageReason>
+    <damageSymptom>
+        <element id="string" name="string" />
+        <element id="string" name="string" />
+        <element id="string" name="string" />
+    </damageSymptom>
+    <treeStateCategory>
+        <element id="string" name="string" />
+        <element id="string" name="string" />
+        <element id="string" name="string" />
+        <element id="string" name="string" />
+    </treeStateCategory>
+    <event>
+        <element id="string" name="string" />
+        <element id="string" name="string" />
+        <element id="string" name="string" />
+    </event>
+    <pestSourceGrowthPhase>
+        <element id="string" name="string" />
+        <element id="string" name="string" />
+    </pestSourceGrowthPhase>
+</catalog>

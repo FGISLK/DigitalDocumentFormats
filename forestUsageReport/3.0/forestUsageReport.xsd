@@ -1,0 +1,303 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<!--Created with Liquid XML 2013 Designer Edition 11.1.0.4725 (http://www.liquid-technologies.com)-->
+<xs:schema xmlns:ns0="http://rosleshoz.gov.ru/xmlns/sTypes"
+           xmlns:ns1="http://rosleshoz.gov.ru/xmlns/cTypes"
+           elementFormDefault="qualified"
+           targetNamespace="http://rosleshoz.gov.ru/xmlns/forestUsageReport"
+           version="3.0"
+           xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:import schemaLocation=".\sTypes.xsd"
+               namespace="http://rosleshoz.gov.ru/xmlns/sTypes" />
+    <xs:import schemaLocation=".\cTypes.xsd"
+               namespace="http://rosleshoz.gov.ru/xmlns/cTypes" />
+    <xs:element xmlns:q1="http://rosleshoz.gov.ru/xmlns/forestUsageReport"
+                name="forestUsageReport"
+                type="q1:forestUsageReport" />
+    <xs:complexType name="forestUsageReport">
+        <xs:annotation>
+            <xs:documentation>Описание отчета об использовании лесов</xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+            <xs:element name="serviceInfo"
+                        type="ns1:serviceInfo" />
+            <xs:element name="header">
+                <xs:annotation>
+                    <xs:documentation>Общие сведения об отчете</xs:documentation>
+                </xs:annotation>
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element xmlns:q2="forestUsageReport"
+                                    name="executiveAuthority"
+                                    type="ns1:reference">
+                            <xs:annotation>
+                                <xs:documentation>Наименование органа государственной власти, органа местного самоуправления</xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                        <xs:element xmlns:q4="forestUsageReport"
+                                    name="partner"
+                                    type="ns1:partner">
+                            <xs:annotation>
+                                <xs:documentation>Отправитель документа</xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                        <xs:element xmlns:q3="forestUsageReport"
+                                    name="period"
+                                    type="ns1:period">
+                            <xs:annotation>
+                                <xs:documentation>Отчетный период</xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                        <xs:element xmlns:q5="forestUsageReport"
+                                    name="contract"
+                                    type="ns1:contract">
+                            <xs:annotation>
+                                <xs:documentation>Договор</xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                        <xs:element name="signerData"
+                                    type="ns1:signerData">
+                            <xs:annotation>
+                                <xs:documentation>Подписант документа</xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="woodHarvesting">
+                <xs:annotation>
+                    <xs:documentation>Таблица "Использование лесов для заготовки древесины"</xs:documentation>
+                </xs:annotation>
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element xmlns:q2="http://rosleshoz.gov.ru/xmlns/forestUsageReport"
+                                    xmlns:q6="forestUsageReport"
+                                    xmlns:q1="http://rosleshoz.gov.ru/"
+                                    name="row"
+                                    type="q2:woodHarvestingRow"
+                                    minOccurs="0"
+                                    maxOccurs="unbounded" />
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="notWoodHarvesting">
+                <xs:annotation>
+                    <xs:documentation>Таблица "Использование лесов в целях, не связанных с заготовкой древесины"</xs:documentation>
+                </xs:annotation>
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element xmlns:q2="http://rosleshoz.gov.ru/"
+                                    xmlns:q3="http://rosleshoz.gov.ru/xmlns/forestUsageReport"
+                                    xmlns:q7="forestUsageReport"
+                                    name="row"
+                                    type="q3:notWoodHarvestingRow"
+                                    minOccurs="0"
+                                    maxOccurs="unbounded" />
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="measure">
+                <xs:annotation>
+                    <xs:documentation>Таблица "Мероприятия, связанные с использованием лесов"</xs:documentation>
+                </xs:annotation>
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element xmlns:q3="http://rosleshoz.gov.ru/"
+                                    xmlns:q4="http://rosleshoz.gov.ru/xmlns/forestUsageReport"
+                                    xmlns:q1="forestUsageReport"
+                                    name="row"
+                                    type="q4:measureRow"
+                                    minOccurs="0"
+                                    maxOccurs="unbounded">
+                            <xs:annotation>
+                                <xs:documentation>Сервитут</xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="attachments"
+                        type="ns1:attachments" />
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="woodHarvestingRow">
+        <xs:sequence>
+            <xs:element xmlns:q9="forestUsageReport"
+                        name="location"
+                        type="ns1:location">
+                <xs:annotation>
+                    <xs:documentation>В поле taxationUnit может присутствовать только одно значение (без перечисления через запятую или тире)</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element xmlns:q10="forestUsageReport"
+                        name="areaSquare"
+                        type="ns0:area"
+                        default="0.0000">
+                <xs:annotation>
+                    <xs:documentation>Площадь лесосеки, га</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element xmlns:q11="forestUsageReport"
+                        name="areaCutting"
+                        type="ns0:area">
+                <xs:annotation>
+                    <xs:documentation>Площадь рубки, га</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element xmlns:q12="forestUsageReport"
+                        name="farm"
+                        type="ns0:farm" />
+            <xs:element xmlns:q13="forestUsageReport"
+                        name="formCutting"
+                        type="ns0:formCutting">
+                <xs:annotation>
+                    <xs:documentation>Форма рубки</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element xmlns:q14="forestUsageReport"
+                        name="typeCutting"
+                        type="ns1:reference">
+                <xs:annotation>
+                    <xs:documentation>Указывается элемент справочника "Виды рубок"</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element xmlns:q15="forestUsageReport"
+                        name="wood"
+                        type="ns1:reference">
+                <xs:annotation>
+                    <xs:documentation>Породный состав (Указывается элемент справочника "Породы древесины")</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element xmlns:q16="forestUsageReport"
+                        name="sortiment"
+                        type="ns1:reference"
+                        minOccurs="0">
+                <xs:annotation>
+                    <xs:documentation>Указывается в случае, если был определен сортиментный состав древесины (заполняется элементами справочника "Сортименты")</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element xmlns:q17="forestUsageReport"
+                        name="value"
+                        type="ns0:valueCutting"
+                        default="0.00">
+                <xs:annotation>
+                    <xs:documentation>Указывается фактический объем полученной (заготовка, рубка) древесины, куб. м.</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="note"
+                        minOccurs="0">
+                <xs:annotation>
+                    <xs:documentation>Примечание</xs:documentation>
+                </xs:annotation>
+                <xs:simpleType>
+                    <xs:restriction base="xs:string">
+                        <xs:minLength value="0" />
+                        <xs:maxLength value="300" />
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:element>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="notWoodHarvestingRow">
+        <xs:sequence>
+            <xs:element xmlns:q2="forestUsageReport"
+                        name="usageType"
+                        type="ns1:reference" />
+            <xs:element xmlns:q3="forestUsageReport"
+                        name="location"
+                        type="ns1:location" />
+            <xs:element xmlns:q4="forestUsageReport"
+                        name="area"
+                        type="ns0:area" />
+            <xs:element xmlns:q5="forestUsageReport"
+                        name="resourceType"
+                        type="ns1:reference"
+                        minOccurs="0">
+                <xs:annotation>
+                    <xs:documentation>Вид заготавливаемых лесных ресурсов</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element xmlns:q6="forestUsageReport"
+                        name="unitType"
+                        type="ns1:reference"
+                        minOccurs="0" />
+            <xs:element xmlns:q7="forestUsageReport"
+                        name="volume"
+                        type="ns0:forestUsageVolume"
+                        minOccurs="0" />
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="measureRow">
+        <xs:sequence>
+            <xs:element xmlns:q8="forestUsageReport"
+                        name="measure"
+                        type="ns1:reference">
+                <xs:annotation>
+                    <xs:documentation>Наименование мероприятия</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="object"
+                        type="ns1:reference" />
+            <xs:element name="location"
+                        type="ns1:location" />
+            <xs:element xmlns:q9="forestUsageReport"
+                        name="area"
+                        type="ns0:area">
+                <xs:annotation>
+                    <xs:documentation>Площадь лесосеки, га</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element xmlns:q10="forestUsageReport"
+                        name="farm"
+                        type="ns0:farm"
+                        minOccurs="0" />
+            <xs:element xmlns:q11="forestUsageReport"
+                        name="formCutting"
+                        type="ns0:formCutting"
+                        minOccurs="0">
+                <xs:annotation>
+                    <xs:documentation>Форма рубки</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element xmlns:q12="forestUsageReport"
+                        name="typeCutting"
+                        type="ns1:reference"
+                        minOccurs="0">
+                <xs:annotation>
+                    <xs:documentation>Указывается элемент справочника "Виды рубок"</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element xmlns:q16="forestUsageReport"
+                        name="wood"
+                        type="ns1:reference"
+                        minOccurs="0">
+                <xs:annotation>
+                    <xs:documentation>Породный состав (Указывается элемент справочника "Породы древесины")</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element xmlns:q13="forestUsageReport"
+                        name="sortiment"
+                        type="ns1:reference"
+                        minOccurs="0">
+                <xs:annotation>
+                    <xs:documentation>Указывается в случае, если был определен сортиментный состав древесины (заполняется элементами справочника "Сортименты")</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element xmlns:q14="forestUsageReport"
+                        name="value"
+                        type="ns0:valueCutting"
+                        minOccurs="0">
+                <xs:annotation>
+                    <xs:documentation>Указывается фактический объем полученной (заготовка, рубка) древесины, куб. м.</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element xmlns:q15="forestUsageReport"
+                        name="commercialValue"
+                        type="ns0:valueCutting"
+                        minOccurs="0">
+                <xs:annotation>
+                    <xs:documentation>Указывается фактический объем полученной деловой древесины, куб. м.</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+        </xs:sequence>
+    </xs:complexType>
+</xs:schema>
