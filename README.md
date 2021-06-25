@@ -1,18 +1,18 @@
 # Форматы электронных документов
 
 ## Коды услуг
-* forestDeclaration - лесная декларация;
-* forestUsageReport - отчет об использовании лесов;
-* forestReproduction - отчет о воспроизводстве лесов; 
-* forestFireSecurity - отчет об охране лесов от пожаров;
-* forestProtection - отчет о защите лесов;
+* [forestDeclaration](https://github.com/FGISLK/DigitalDocumentFormats/tree/main/forestDeclaration) - лесная декларация;
+* [forestUsageReport](https://github.com/FGISLK/DigitalDocumentFormats/tree/main/forestUsageReport) - отчет об использовании лесов;
+* [forestReproduction](https://github.com/FGISLK/DigitalDocumentFormats/tree/main/forestReproduction) - отчет о воспроизводстве лесов; 
+* [forestFireSecurity](https://github.com/FGISLK/DigitalDocumentFormats/tree/main/forestFireSecurity) - отчет об охране лесов от пожаров;
+* [forestProtection](https://github.com/FGISLK/DigitalDocumentFormats/tree/main/forestProtection) - отчет о защите лесов;
 
 ## Прочие форматы
-* сommonTypes - общие типы для всех форматов;
-* catalogs - справочники;
+* [сommonTypes](https://github.com/FGISLK/DigitalDocumentFormats/tree/main/%D1%81ommonTypes) - общие типы для всех форматов;
+* [catalogs](https://github.com/FGISLK/DigitalDocumentFormats/tree/main/catalogs) - справочники;
 
 ## Прочие ресурсы
-catalogsList - перечень справочников, используемых при обмене;
+[catalogsList](https://github.com/FGISLK/DigitalDocumentFormats/tree/main/catalogsList) - перечень справочников, используемых при обмене;
 
 ## Описание пакета обмена
 Электронный документ обмена состоит из набора файлов, упакованных в один ZIP - архив (далее Пакет). Пример пакета смотри по [ссылке](https://github.com/FGISLK/DigitalDocumentFormats/raw/main/forestDeclaration/3.0/%D0%B4%D0%B5%D0%BC%D0%BE.zip).
