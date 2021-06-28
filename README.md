@@ -8,7 +8,7 @@
 * [forestProtection](https://github.com/FGISLK/DigitalDocumentFormats/tree/main/forestProtection) - отчет о защите лесов;
 
 ## Прочие форматы
-* [сommonTypes](https://github.com/FGISLK/DigitalDocumentFormats/tree/main/%D1%81ommonTypes) - общие типы для всех форматов;
+* [сommonTypes](https://github.com/FGISLK/DigitalDocumentFormats/tree/main/commonTypes) - общие типы для всех форматов;
 * [catalogs](https://github.com/FGISLK/DigitalDocumentFormats/tree/main/catalogs) - справочники;
 
 ## Прочие ресурсы
