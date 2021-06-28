@@ -276,7 +276,7 @@
     </xs:complexType>
     <xs:complexType name="reportRateType">
         <xs:annotation>
-            <xs:documentation>Показатели отчетов</xs:documentation>
+            <xs:documentation>Группы показателей отчетов</xs:documentation>
         </xs:annotation>
         <xs:complexContent>
             <xs:extension xmlns:q4="http://rosleshoz.gov.ru/xmlns/cTypes"
