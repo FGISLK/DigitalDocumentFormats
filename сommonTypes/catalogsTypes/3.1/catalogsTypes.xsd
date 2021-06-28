@@ -250,11 +250,11 @@
             <xs:extension xmlns:q4="http://rosleshoz.gov.ru/xmlns/cTypes"
                           base="q4:reference">
                 <xs:sequence>
-                    <xs:element name="reportRateType"
-                                xmlns:q1="http://rosleshoz.gov.ru/xmlns/catalogsTypes"
-                                type="q1:reportRateType">
+                    <xs:element xmlns:q1="http://rosleshoz.gov.ru/xmlns/catalogsTypes"
+                                name="reportRateType"
+                                type="q4:reference">
                         <xs:annotation>
-                            <xs:documentation>Вид показателя</xs:documentation>
+                            <xs:documentation>Группа показателя</xs:documentation>
                         </xs:annotation>
                     </xs:element>
                     <xs:element name="parent"
