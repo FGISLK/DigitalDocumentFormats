@@ -1,0 +1,342 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<!--Created with Liquid XML 2013 Designer Edition 11.1.0.4725 (http://www.liquid-technologies.com)-->
+<xs:schema xmlns:nsc="http://rosleshoz.gov.ru/xmlns/catalogsTypes"
+           xmlns:ns1="http://rosleshoz.gov.ru/xmlns/cTypes"
+           xmlns:ns0="http://rosleshoz.gov.ru/xmlns/sTypes"
+           elementFormDefault="qualified"
+           targetNamespace="http://rosleshoz.gov.ru/xmlns/catalogs"
+           version="3.1"
+           xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:import schemaLocation="..\..\сommonTypes\sTypes\3.0\sTypes.xsd"
+               namespace="http://rosleshoz.gov.ru/xmlns/sTypes" />
+    <xs:import schemaLocation="..\..\сommonTypes\cTypes\3.0\cTypes.xsd"
+               namespace="http://rosleshoz.gov.ru/xmlns/cTypes" />
+    <xs:import schemaLocation="..\..\сommonTypes\catalogsTypes\3.1\catalogsTypes.xsd"
+               namespace="http://rosleshoz.gov.ru/xmlns/catalogsTypes" />
+    <xs:element xmlns:q1="http://rosleshoz.gov.ru/xmlns/catalogs"
+                name="catalog"
+                type="q1:сatalog" />
+    <xs:complexType name="сatalog">
+        <xs:annotation>
+            <xs:documentation>Список справочников</xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+            <xs:element name="subject"
+                        minOccurs="0">
+                <xs:annotation>
+                    <xs:documentation>Справочник "Субъекты РФ"</xs:documentation>
+                </xs:annotation>
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="element"
+                                    type="nsc:subject"
+                                    maxOccurs="unbounded" />
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="executiveAuthority"
+                        minOccurs="0">
+                <xs:annotation>
+                    <xs:documentation>Справочник "Органы государственной власти, органы местного самоуправления"</xs:documentation>
+                </xs:annotation>
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="element"
+                                    type="nsc:executiveAuthority"
+                                    maxOccurs="unbounded" />
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="forestry"
+                        minOccurs="0">
+                <xs:annotation>
+                    <xs:documentation>Справочник "Лесничества"</xs:documentation>
+                </xs:annotation>
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="element"
+                                    type="nsc:forestry"
+                                    maxOccurs="unbounded" />
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="subforestry"
+                        minOccurs="0">
+                <xs:annotation>
+                    <xs:documentation>Справочник "Участковые лесничества"</xs:documentation>
+                </xs:annotation>
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="element"
+                                    type="nsc:subforestry"
+                                    maxOccurs="unbounded" />
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="tract"
+                        minOccurs="0">
+                <xs:annotation>
+                    <xs:documentation>Справочник "Урочища"</xs:documentation>
+                </xs:annotation>
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="element"
+                                    type="nsc:tract"
+                                    maxOccurs="unbounded" />
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="tree"
+                        minOccurs="0">
+                <xs:annotation>
+                    <xs:documentation>Справочник "Древесные породы"</xs:documentation>
+                </xs:annotation>
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="element"
+                                    type="nsc:tree"
+                                    maxOccurs="unbounded" />
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="wood"
+                        minOccurs="0">
+                <xs:annotation>
+                    <xs:documentation>Справочник "Породы древесины"</xs:documentation>
+                </xs:annotation>
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="element"
+                                    type="nsc:wood"
+                                    minOccurs="0"
+                                    maxOccurs="unbounded" />
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="sortiment"
+                        minOccurs="0">
+                <xs:annotation>
+                    <xs:documentation>Справочник "Сортименты"</xs:documentation>
+                </xs:annotation>
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="element"
+                                    type="nsc:sortiment"
+                                    minOccurs="0"
+                                    maxOccurs="unbounded" />
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="typeCutting"
+                        minOccurs="0">
+                <xs:annotation>
+                    <xs:documentation>Справочник "Типы рубок"</xs:documentation>
+                </xs:annotation>
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="element"
+                                    type="nsc:typeCutting"
+                                    minOccurs="0"
+                                    maxOccurs="unbounded" />
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="unitType"
+                        minOccurs="0">
+                <xs:annotation>
+                    <xs:documentation>Справочник "Единицы измерения"</xs:documentation>
+                </xs:annotation>
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="element"
+                                    type="nsc:unitType"
+                                    minOccurs="0"
+                                    maxOccurs="unbounded" />
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="usageType"
+                        minOccurs="0">
+                <xs:annotation>
+                    <xs:documentation>Справочник "Виды использования лесов"</xs:documentation>
+                </xs:annotation>
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="element"
+                                    type="nsc:usageType"
+                                    minOccurs="0"
+                                    maxOccurs="unbounded" />
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="resource"
+                        minOccurs="0">
+                <xs:annotation>
+                    <xs:documentation>Справочник "Вид заготавливаемых лесных ресурсов"</xs:documentation>
+                </xs:annotation>
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="element"
+                                    type="nsc:resource"
+                                    minOccurs="0"
+                                    maxOccurs="unbounded" />
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="measure"
+                        minOccurs="0">
+                <xs:annotation>
+                    <xs:documentation>Справочник "Мероприятия"</xs:documentation>
+                </xs:annotation>
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="element"
+                                    type="nsc:measure"
+                                    minOccurs="0"
+                                    maxOccurs="unbounded" />
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="object"
+                        minOccurs="0">
+                <xs:annotation>
+                    <xs:documentation>Справочник "Объекты инфраструктуры"</xs:documentation>
+                </xs:annotation>
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="element"
+                                    type="nsc:object"
+                                    minOccurs="0"
+                                    maxOccurs="unbounded" />
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="specialPurpose"
+                        minOccurs="0">
+                <xs:annotation>
+                    <xs:documentation>Справочник "Целевые назначения лесов"</xs:documentation>
+                </xs:annotation>
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="element"
+                                    type="nsc:specialPurpose"
+                                    minOccurs="0"
+                                    maxOccurs="unbounded" />
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="protectionCategory"
+                        minOccurs="0">
+                <xs:annotation>
+                    <xs:documentation>Справочник "Категории защитных лесов"</xs:documentation>
+                </xs:annotation>
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="element"
+                                    type="nsc:protectionCategory"
+                                    minOccurs="0"
+                                    maxOccurs="unbounded" />
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="reportRate"
+                        minOccurs="0">
+                <xs:annotation>
+                    <xs:documentation>Справочник "Показатели отчетов"</xs:documentation>
+                </xs:annotation>
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="element"
+                                    type="nsc:reportRate"
+                                    minOccurs="0"
+                                    maxOccurs="unbounded" />
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="reportRateType"
+                        minOccurs="0">
+                <xs:annotation>
+                    <xs:documentation>Справочник "Показатели отчетов"</xs:documentation>
+                </xs:annotation>
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="element"
+                                    type="nsc:reportRateType"
+                                    minOccurs="0"
+                                    maxOccurs="unbounded" />
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="damageReason"
+                        minOccurs="0">
+                <xs:annotation>
+                    <xs:documentation>Справочник "Причины повреждения"</xs:documentation>
+                </xs:annotation>
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="element"
+                                    type="nsc:damageReason"
+                                    minOccurs="0"
+                                    maxOccurs="unbounded" />
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="damageSymptom"
+                        minOccurs="0">
+                <xs:annotation>
+                    <xs:documentation>Справочник "Признаки повреждения"</xs:documentation>
+                </xs:annotation>
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="element"
+                                    type="nsc:damageSymptoms"
+                                    minOccurs="0"
+                                    maxOccurs="unbounded" />
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="treeStateCategory"
+                        minOccurs="0">
+                <xs:annotation>
+                    <xs:documentation>Справочник "Категории состояния деревьев"</xs:documentation>
+                </xs:annotation>
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="element"
+                                    type="nsc:treeStateCategory"
+                                    minOccurs="0"
+                                    maxOccurs="unbounded" />
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="event"
+                        minOccurs="0">
+                <xs:annotation>
+                    <xs:documentation>Справочник "Мероприятия по защите лесов"</xs:documentation>
+                </xs:annotation>
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="element"
+                                    type="nsc:event"
+                                    minOccurs="0"
+                                    maxOccurs="unbounded" />
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="pestSourceGrowthPhase"
+                        minOccurs="0">
+                <xs:annotation>
+                    <xs:documentation>Справочник "Фазы развития очага вредных организмов"</xs:documentation>
+                </xs:annotation>
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="element"
+                                    type="nsc:pestSourceGrowthPhase"
+                                    minOccurs="0"
+                                    maxOccurs="unbounded" />
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+        </xs:sequence>
+    </xs:complexType>
+</xs:schema>
