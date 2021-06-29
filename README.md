@@ -15,7 +15,7 @@
 [catalogsList](https://github.com/FGISLK/DigitalDocumentFormats/tree/main/catalogsList) - перечень справочников, используемых при обмене;
 
 ## Описание пакета обмена
-Электронный документ обмена состоит из набора файлов, упакованных в один ZIP - архив (далее Пакет). Пример пакета смотри по [ссылке](https://github.com/FGISLK/DigitalDocumentFormats/raw/main/forestDeclaration/3.0/%D0%B4%D0%B5%D0%BC%D0%BE.zip).
+Электронный документ обмена состоит из набора файлов, упакованных в один ZIP - архив (далее Пакет). Пример пакета смотри по [ссылке](https://github.com/FGISLK/DigitalDocumentFormats/blob/main/forestDeclaration/3.0/forestDeclaration-000000004_00037.zip?raw=true).
 
 Пакет содержит:
 - В корне пакета:
