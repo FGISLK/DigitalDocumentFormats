@@ -32,20 +32,7 @@
             <xs:enumeration value="Объекты лесного семеноводства" />
             <xs:enumeration value="Объекты, не связанные с созданием лесной инфраструктуры" />
         </xs:restriction>
-    </xs:simpleType>
-    <xs:simpleType name="reportRateType">
-        <xs:annotation>
-            <xs:documentation>Виды показателей отчетов</xs:documentation>
-        </xs:annotation>
-        <xs:restriction base="xs:string">
-            <xs:enumeration value="Охрана лесов от пожаров" />
-            <xs:enumeration value="Защита лесов" />
-            <xs:enumeration value="Воспроизводство лесов и лесоразведение" />
-            <xs:enumeration value="Лесопатологические обследования" />
-            <xs:enumeration value="Предупреждение распространения очагов вредных организмов" />
-            <xs:enumeration value="Ликвидация очагов вредных организмов" />
-        </xs:restriction>
-    </xs:simpleType>
+    </xs:simpleType>    
     <xs:simpleType name="bonitet">
         <xs:annotation>
             <xs:documentation>Бонитеты</xs:documentation>
