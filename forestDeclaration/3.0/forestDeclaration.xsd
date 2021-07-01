@@ -6,9 +6,9 @@
            targetNamespace="http://rosleshoz.gov.ru/xmlns/forestDeclaration"
            version="3.0"
            xmlns:xs="http://www.w3.org/2001/XMLSchema">
-    <xs:import schemaLocation=".\cTypes.xsd"
+    <xs:import schemaLocation="..\..\commonTypes\cTypes\3.0\cTypes.xsd"
                namespace="http://rosleshoz.gov.ru/xmlns/cTypes" />
-    <xs:import schemaLocation=".\sTypes.xsd"
+    <xs:import schemaLocation="..\..\commonTypes\sTypes\3.0\sTypes.xsd"
                namespace="http://rosleshoz.gov.ru/xmlns/sTypes" />
     <xs:element xmlns:q1="http://rosleshoz.gov.ru/xmlns/forestDeclaration"
                 name="forestDeclaration"
@@ -113,8 +113,7 @@
                     </xs:sequence>
                 </xs:complexType>
             </xs:element>
-            <xs:element name="harvestingWood"
-                        minOccurs="0">
+            <xs:element name="harvestingWood">
                 <xs:annotation>
                     <xs:documentation>Таблица «Объем использования лесов в целях заготовки древесины и (или) живицы»</xs:documentation>
                 </xs:annotation>
@@ -128,7 +127,7 @@
                         <xs:sequence>
                             <xs:element name="usageType"
                                         type="ns0:reference"
-                                        minOccurs="1"
+                                        minOccurs="0"
                                         maxOccurs="unbounded">
                                 <xs:annotation>
                                     <xs:documentation>Вид использования лесов</xs:documentation>
@@ -138,8 +137,7 @@
                     </xs:sequence>
                 </xs:complexType>
             </xs:element>
-            <xs:element name="harvestingObject"
-                        minOccurs="0">
+            <xs:element name="harvestingObject">
                 <xs:annotation>
                     <xs:documentation>Таблица «Создание (снос) объектов лесной инфраструктуры»</xs:documentation>
                 </xs:annotation>
@@ -153,8 +151,7 @@
                     </xs:sequence>
                 </xs:complexType>
             </xs:element>
-            <xs:element name="otherUsageTypes"
-                        minOccurs="0">
+            <xs:element name="otherUsageTypes">
                 <xs:annotation>
                     <xs:documentation>Таблица «Объем использования лесов в целях, не связанных с заготовкой древесины и (или) живицы»</xs:documentation>
                 </xs:annotation>
@@ -168,7 +165,7 @@
                         <xs:sequence>
                             <xs:element name="usageType"
                                         type="ns0:reference"
-                                        minOccurs="1"
+                                        minOccurs="0"
                                         maxOccurs="unbounded">
                                 <xs:annotation>
                                     <xs:documentation>Вид использования лесов</xs:documentation>
@@ -178,8 +175,7 @@
                     </xs:sequence>
                 </xs:complexType>
             </xs:element>
-            <xs:element name="otherUsageObjects"
-                        minOccurs="0">
+            <xs:element name="otherUsageObjects">
                 <xs:annotation>
                     <xs:documentation>Таблица «Создание (снос) объектов лесной инфраструктуры, лесоперерабатывающей инфраструктуры и объектов, не связанных с созданием лесной инфраструктуры»</xs:documentation>
                 </xs:annotation>
@@ -193,8 +189,7 @@
                     </xs:sequence>
                 </xs:complexType>
             </xs:element>
-            <xs:element name="mainScheme"
-                        minOccurs="0">
+            <xs:element name="mainScheme">
                 <xs:annotation>
                     <xs:documentation>Таблица «Общая схема расположения мест проведения работ при использовании лесов»</xs:documentation>
                 </xs:annotation>
@@ -208,8 +203,7 @@
                     </xs:sequence>
                 </xs:complexType>
             </xs:element>
-            <xs:element name="objectScheme"
-                        minOccurs="0">
+            <xs:element name="objectScheme">
                 <xs:annotation>
                     <xs:documentation>Таблица «Схема(ы) размещения лесосеки, объекта лесной инфраструктуры, лесоперерабатывающей инфраструктуры и объекта, не связанного с созданием лесной инфраструктуры»</xs:documentation>
                 </xs:annotation>
