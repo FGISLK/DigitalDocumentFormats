@@ -7,11 +7,11 @@
            targetNamespace="http://rosleshoz.gov.ru/xmlns/catalogs"
            version="3.1"
            xmlns:xs="http://www.w3.org/2001/XMLSchema">
-    <xs:import schemaLocation="..\..\сommonTypes\sTypes\3.0\sTypes.xsd"
+    <xs:import schemaLocation="..\..\commonTypes\sTypes\3.0\sTypes.xsd"
                namespace="http://rosleshoz.gov.ru/xmlns/sTypes" />
-    <xs:import schemaLocation="..\..\сommonTypes\cTypes\3.0\cTypes.xsd"
+    <xs:import schemaLocation="..\..\commonTypes\cTypes\3.0\cTypes.xsd"
                namespace="http://rosleshoz.gov.ru/xmlns/cTypes" />
-    <xs:import schemaLocation="..\..\сommonTypes\catalogsTypes\3.1\catalogsTypes.xsd"
+    <xs:import schemaLocation="..\..\commonTypes\catalogsTypes\3.1\catalogsTypes.xsd"
                namespace="http://rosleshoz.gov.ru/xmlns/catalogsTypes" />
     <xs:element xmlns:q1="http://rosleshoz.gov.ru/xmlns/catalogs"
                 name="catalog"
