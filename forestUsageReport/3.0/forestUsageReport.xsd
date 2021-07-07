@@ -119,7 +119,9 @@
                 <xs:complexType>
                     <xs:sequence>
                         <xs:element name="file"
-                                    type="ns1:file" />
+                                    type="ns1:file"
+                                    minOccurs="0"
+                                    maxOccurs="unbounded" />
                     </xs:sequence>
                 </xs:complexType>
             </xs:element>
