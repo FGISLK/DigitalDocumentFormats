@@ -63,28 +63,11 @@
                                 <xs:documentation>Период действия документа</xs:documentation>
                             </xs:annotation>
                         </xs:element>
-                        <xs:element name="partner">
+                        <xs:element name="partner"
+                                    type="ns0:partner">
                             <xs:annotation>
                                 <xs:documentation>Отправитель документа</xs:documentation>
                             </xs:annotation>
-                            <xs:complexType>
-                                <xs:sequence>
-                                    <xs:choice>
-                                        <xs:element name="juridicalPerson"
-                                                    type="ns0:juridicalPerson" />
-                                        <xs:element name="physicalPerson"
-                                                    type="ns0:physicalPerson" />
-                                        <xs:element name="individualEntrepreneur"
-                                                    type="ns0:individualEntrepreneur" />
-                                    </xs:choice>
-                                    <xs:element name="phone"
-                                                type="xs:string">
-                                        <xs:annotation>
-                                            <xs:documentation>Номер контактного телефона</xs:documentation>
-                                        </xs:annotation>
-                                    </xs:element>
-                                </xs:sequence>
-                            </xs:complexType>
                         </xs:element>
                         <xs:element name="signerData"
                                     type="ns0:signerData">
