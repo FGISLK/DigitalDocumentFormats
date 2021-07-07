@@ -5,7 +5,7 @@
            targetNamespace="http://rosleshoz.gov.ru/xmlns/cTypes"
            version="3.0"
            xmlns:xs="http://www.w3.org/2001/XMLSchema">
-    <xs:import schemaLocation=".\sTypes.xsd"
+    <xs:import schemaLocation="..\..\sTypes\3.0\sTypes.xsd"
                namespace="http://rosleshoz.gov.ru/xmlns/sTypes" />
     <xs:complexType name="reference">
         <xs:annotation>
