@@ -32,22 +32,6 @@
             <xs:enumeration value="Объекты лесного семеноводства" />
             <xs:enumeration value="Объекты, не связанные с созданием лесной инфраструктуры" />
         </xs:restriction>
-    </xs:simpleType>    
-    <xs:simpleType name="bonitet">
-        <xs:annotation>
-            <xs:documentation>Бонитеты</xs:documentation>
-        </xs:annotation>
-        <xs:restriction base="xs:string">
-            <xs:enumeration value="1А" />
-            <xs:enumeration value="1Б" />
-            <xs:enumeration value="1" />
-            <xs:enumeration value="2" />
-            <xs:enumeration value="3" />
-            <xs:enumeration value="4" />
-            <xs:enumeration value="5" />
-            <xs:enumeration value="5А" />
-            <xs:enumeration value="5Б" />
-        </xs:restriction>
     </xs:simpleType>
     <xs:simpleType name="taxationMethod">
         <xs:annotation>
@@ -102,7 +86,7 @@
     </xs:simpleType>
     <xs:simpleType name="valueCutting">
         <xs:annotation>
-            <xs:documentation>Объем древесины</xs:documentation>
+            <xs:documentation>Объем древесины/живицы</xs:documentation>
         </xs:annotation>
         <xs:restriction base="xs:decimal">
             <xs:totalDigits value="10" />
@@ -160,6 +144,9 @@
         <xs:restriction base="xs:string" />
     </xs:simpleType>
     <xs:simpleType name="forestUsageVolume">
+        <xs:annotation>
+            <xs:documentation>Объем использования лесов, не связанный с заготовкой древесины и живицы</xs:documentation>
+        </xs:annotation>
         <xs:restriction base="xs:decimal">
             <xs:totalDigits value="15" />
             <xs:fractionDigits value="4" />
