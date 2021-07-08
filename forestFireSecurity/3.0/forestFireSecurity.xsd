@@ -6,9 +6,9 @@
            targetNamespace="http://rosleshoz.gov.ru/xmlns/forestFireSecurity"
            version="3.0"
            xmlns:xs="http://www.w3.org/2001/XMLSchema">
-    <xs:import schemaLocation=".\sTypes.xsd"
+    <xs:import schemaLocation="..\..\commonTypes\sTypes\3.0\sTypes.xsd"
                namespace="http://rosleshoz.gov.ru/xmlns/sTypes" />
-    <xs:import schemaLocation=".\cTypes.xsd"
+    <xs:import schemaLocation="..\..\commonTypes\cTypes\3.0\cTypes.xsd"
                namespace="http://rosleshoz.gov.ru/xmlns/cTypes" />
     <xs:element xmlns:q1="http://rosleshoz.gov.ru/xmlns/forestFireSecurity"
                 name="forestFireSecurity"
