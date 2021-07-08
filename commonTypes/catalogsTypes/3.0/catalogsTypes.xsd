@@ -6,9 +6,9 @@
            targetNamespace="http://rosleshoz.gov.ru/xmlns/catalogsTypes"
            version="3.0"
            xmlns:xs="http://www.w3.org/2001/XMLSchema">
-    <xs:import schemaLocation=".\cTypes.xsd"
+    <xs:import schemaLocation="..\..\cTypes\3.0\cTypes.xsd"
                namespace="http://rosleshoz.gov.ru/xmlns/cTypes" />
-    <xs:import schemaLocation=".\sTypes.xsd"
+    <xs:import schemaLocation="..\..\sTypes\3.0\sTypes.xsd"
                namespace="http://rosleshoz.gov.ru/xmlns/sTypes" />
     <xs:complexType name="subject">
         <xs:annotation>
@@ -120,7 +120,7 @@
     </xs:complexType>
     <xs:complexType name="wood">
         <xs:annotation>
-            <xs:documentation>Породы древесины</xs:documentation>
+            <xs:documentation>Виды древесины</xs:documentation>
         </xs:annotation>
         <xs:complexContent>
             <xs:extension xmlns:q6="http://rosleshoz.gov.ru/xmlns/cTypes"
@@ -148,6 +148,15 @@
     <xs:complexType name="typeCutting">
         <xs:annotation>
             <xs:documentation>Вид рубки</xs:documentation>
+        </xs:annotation>
+        <xs:complexContent>
+            <xs:extension xmlns:q8="http://rosleshoz.gov.ru/xmlns/cTypes"
+                          base="q8:reference" />
+        </xs:complexContent>
+    </xs:complexType>
+    <xs:complexType name="bonitet">
+        <xs:annotation>
+            <xs:documentation>Бонитет</xs:documentation>
         </xs:annotation>
         <xs:complexContent>
             <xs:extension xmlns:q8="http://rosleshoz.gov.ru/xmlns/cTypes"
@@ -250,8 +259,9 @@
             <xs:extension xmlns:q4="http://rosleshoz.gov.ru/xmlns/cTypes"
                           base="q4:reference">
                 <xs:sequence>
-                    <xs:element name="reportRateType"
-                                type="ns0:reportRateType">
+                    <xs:element xmlns:q1="http://rosleshoz.gov.ru/xmlns/catalogsTypes"
+                                name="reportRateType"
+                                type="q1:reportRateType">
                         <xs:annotation>
                             <xs:documentation>Вид показателя</xs:documentation>
                         </xs:annotation>
@@ -271,6 +281,15 @@
                     </xs:element>
                 </xs:sequence>
             </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+    <xs:complexType name="reportRateType">
+        <xs:annotation>
+            <xs:documentation>Группы показателей отчетов</xs:documentation>
+        </xs:annotation>
+        <xs:complexContent>
+            <xs:extension xmlns:q4="http://rosleshoz.gov.ru/xmlns/cTypes"
+                          base="q4:reference" />
         </xs:complexContent>
     </xs:complexType>
     <xs:complexType name="damageReason">
