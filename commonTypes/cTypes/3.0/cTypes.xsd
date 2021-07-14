@@ -40,7 +40,7 @@
                 </xs:element>
                 <xs:element xmlns:q18="http://rosleshoz.gov.ru/xmlns/cTypes"
                             name="individualEntrepreneur"
-                            type="q18:individualEntrepreneur">
+                            type="q18:individualEnterpreneur">
                     <xs:annotation>
                         <xs:documentation>Индивидуальный предприниматель</xs:documentation>
                     </xs:annotation>
@@ -176,7 +176,7 @@
             </xs:element>
         </xs:sequence>
     </xs:complexType>
-    <xs:complexType name="individualEntrepreneur">
+    <xs:complexType name="individualEnterpreneur">
         <xs:annotation>
             <xs:documentation>Сведения о лесопользователе</xs:documentation>
         </xs:annotation>
