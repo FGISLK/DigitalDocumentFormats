@@ -13,3 +13,4 @@
 
 ## Прочие ресурсы
 * [catalogsList](https://github.com/FGISLK/DigitalDocumentFormats/tree/main/catalogsList) - перечень справочников, используемых при обмене;
+* [documentation](https://github.com/FGISLK/DigitalDocumentFormats/tree/main/documentation) - актуальная документация по использованию форматов электронных документов, включая руководство разработчика;
