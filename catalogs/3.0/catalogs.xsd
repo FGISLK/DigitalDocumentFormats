@@ -34,6 +34,19 @@
                     </xs:sequence>
                 </xs:complexType>
             </xs:element>
+            <xs:element name="landType"
+                        minOccurs="0">
+                <xs:annotation>
+                    <xs:documentation>Справочник "Субъекты РФ"</xs:documentation>
+                </xs:annotation>
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="element"
+                                    type="nsc:landType"
+                                    maxOccurs="unbounded" />
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
             <xs:element name="executiveAuthority"
                         minOccurs="0">
                 <xs:annotation>
@@ -144,7 +157,7 @@
             <xs:element name="bonitet"
                         minOccurs="0">
                 <xs:annotation>
-                    <xs:documentation>Справочник "Типы рубок"</xs:documentation>
+                    <xs:documentation>Справочник "Бонитеты"</xs:documentation>
                 </xs:annotation>
                 <xs:complexType>
                     <xs:sequence>
