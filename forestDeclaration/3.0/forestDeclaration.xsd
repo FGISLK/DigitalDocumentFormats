@@ -391,7 +391,7 @@
                 </xs:annotation>
             </xs:element>
             <xs:element name="volume"
-                        type="ns1:valueCutting"
+                        type="ns1:forestUsageVolume"
                         minOccurs="0">
                 <xs:annotation>
                     <xs:documentation>Объем</xs:documentation>
@@ -458,7 +458,7 @@
                 </xs:annotation>
             </xs:element>
             <xs:element name="volume"
-                        type="ns1:valueCutting"
+                        type="ns1:forestUsageVolume"
                         minOccurs="0">
                 <xs:annotation>
                     <xs:documentation>Объем</xs:documentation>
