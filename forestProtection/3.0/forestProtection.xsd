@@ -99,6 +99,9 @@
                 </xs:complexType>
             </xs:element>
             <xs:element name="attachments">
+                <xs:annotation>
+                    <xs:documentation>Присоединенные файлы</xs:documentation>
+                </xs:annotation>
                 <xs:complexType>
                     <xs:sequence>
                         <xs:element name="file"
@@ -125,7 +128,11 @@
                 </xs:annotation>
             </xs:element>
             <xs:element name="codeLine"
-                        type="xs:string" />
+                        type="xs:string">
+                <xs:annotation>
+                    <xs:documentation>Код строки отчета</xs:documentation>
+                </xs:annotation>
+            </xs:element>
             <xs:element xmlns:q9="forestUsageReport"
                         name="location"
                         type="ns1:location">
