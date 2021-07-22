@@ -6,16 +6,16 @@
            targetNamespace="http://rosleshoz.gov.ru/xmlns/forestProtection"
            version="3.0"
            xmlns:xs="http://www.w3.org/2001/XMLSchema">
-    <xs:import schemaLocation=".\sTypes.xsd"
+    <xs:import schemaLocation="..\..\commonTypes\sTypes\3.0\sTypes.xsd"
                namespace="http://rosleshoz.gov.ru/xmlns/sTypes" />
-    <xs:import schemaLocation=".\cTypes.xsd"
+    <xs:import schemaLocation="..\..\commonTypes\cTypes\3.0\cTypes.xsd"
                namespace="http://rosleshoz.gov.ru/xmlns/cTypes" />
     <xs:element xmlns:q1="http://rosleshoz.gov.ru/xmlns/forestProtection"
                 name="forestProtection"
                 type="q1:forestProtection" />
     <xs:complexType name="forestProtection">
         <xs:annotation>
-            <xs:documentation></xs:documentation>
+            <xs:documentation />
         </xs:annotation>
         <xs:sequence>
             <xs:element name="serviceInfo"
@@ -83,23 +83,9 @@
                     </xs:sequence>
                 </xs:complexType>
             </xs:element>
-            <xs:element name="pathologicalExamination">
+            <xs:element name="protection">
                 <xs:annotation>
-                    <xs:documentation>Раздел 1</xs:documentation>
-                </xs:annotation>
-                <xs:complexType>
-                    <xs:sequence>
-                        <xs:element xmlns:q2="http://rosleshoz.gov.ru/xmlns/forestProtection"
-                                    name="row"
-                                    type="q2:row"
-                                    minOccurs="0"
-                                    maxOccurs="unbounded" />
-                    </xs:sequence>
-                </xs:complexType>
-            </xs:element>
-            <xs:element name="prevention">
-                <xs:annotation>
-                    <xs:documentation>Раздел 2</xs:documentation>
+                    <xs:documentation>Мероприятия по защите лесов</xs:documentation>
                 </xs:annotation>
                 <xs:complexType>
                     <xs:sequence>
@@ -107,21 +93,6 @@
                                     xmlns:q2="http://rosleshoz.gov.ru/xmlns/forestFireSecurity"
                                     name="row"
                                     type="q3:row"
-                                    minOccurs="0"
-                                    maxOccurs="unbounded" />
-                    </xs:sequence>
-                </xs:complexType>
-            </xs:element>
-            <xs:element name="liquidation">
-                <xs:annotation>
-                    <xs:documentation>Раздел 3</xs:documentation>
-                </xs:annotation>
-                <xs:complexType>
-                    <xs:sequence>
-                        <xs:element xmlns:q4="http://rosleshoz.gov.ru/xmlns/forestProtection"
-                                    xmlns:q2="http://rosleshoz.gov.ru/xmlns/forestFireSecurity"
-                                    name="row"
-                                    type="q4:row"
                                     minOccurs="0"
                                     maxOccurs="unbounded" />
                     </xs:sequence>
