@@ -98,6 +98,16 @@
                     </xs:sequence>
                 </xs:complexType>
             </xs:element>
+            <xs:element name="attachments">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="file"
+                                    type="ns1:file"
+                                    minOccurs="0"
+                                    maxOccurs="unbounded" />
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
         </xs:sequence>
     </xs:complexType>
     <xs:complexType name="row">
