@@ -40,7 +40,7 @@
                             </xs:annotation>
                         </xs:element>
                         <xs:element name="municipalDistrict"
-                                    type="xs:string"
+                                    type="ns1:reference"
                                     minOccurs="0">
                             <xs:annotation>
                                 <xs:documentation>Муниципальный район</xs:documentation>
