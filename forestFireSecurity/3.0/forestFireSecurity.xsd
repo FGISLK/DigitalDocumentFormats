@@ -17,6 +17,13 @@
         <xs:sequence>
             <xs:element name="serviceInfo"
                         type="ns1:serviceInfo" />
+            <xs:element name="date"
+                        type="xs:date"
+                        default="2016-07-15">
+                <xs:annotation>
+                    <xs:documentation>Дата составления документа</xs:documentation>
+                </xs:annotation>
+            </xs:element>
             <xs:element name="header">
                 <xs:annotation>
                     <xs:documentation>Общие сведения об отчете</xs:documentation>
@@ -79,6 +86,19 @@
                         <xs:element xmlns:q2="http://rosleshoz.gov.ru/xmlns/forestFireSecurity"
                                     name="row"
                                     type="q2:row"
+                                    minOccurs="0"
+                                    maxOccurs="unbounded" />
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="attachments">
+                <xs:annotation>
+                    <xs:documentation>Присоединенные файлы</xs:documentation>
+                </xs:annotation>
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="file"
+                                    type="ns1:file"
                                     minOccurs="0"
                                     maxOccurs="unbounded" />
                     </xs:sequence>
