@@ -6,9 +6,9 @@
            targetNamespace="http://rosleshoz.gov.ru/xmlns/forestReproduction"
            version="3.0"
            xmlns:xs="http://www.w3.org/2001/XMLSchema">
-    <xs:import schemaLocation=".\sTypes.xsd"
+    <xs:import schemaLocation="..\..\commonTypes\sTypes\3.0\sTypes.xsd"
                namespace="http://rosleshoz.gov.ru/xmlns/sTypes" />
-    <xs:import schemaLocation=".\cTypes.xsd"
+    <xs:import schemaLocation="..\..\commonTypes\cTypes\3.0\cTypes.xsd"
                namespace="http://rosleshoz.gov.ru/xmlns/cTypes" />
     <xs:element xmlns:q1="http://rosleshoz.gov.ru/xmlns/forestReproduction"
                 name="forestReproduction"
@@ -17,12 +17,32 @@
         <xs:sequence>
             <xs:element name="serviceInfo"
                         type="ns1:serviceInfo" />
+            <xs:element name="date"
+                        type="xs:date"
+                        default="2016-07-15">
+                <xs:annotation>
+                    <xs:documentation>Дата составления документа</xs:documentation>
+                </xs:annotation>
+            </xs:element>
             <xs:element name="header">
                 <xs:annotation>
                     <xs:documentation>Общие сведения об отчете</xs:documentation>
                 </xs:annotation>
                 <xs:complexType>
                     <xs:sequence>
+                        <xs:element name="subject"
+                                    type="ns1:reference">
+                            <xs:annotation>
+                                <xs:documentation>Субъект РФ</xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                        <xs:element name="municipalDistrict"
+                                    type="ns1:reference"
+                                    minOccurs="0">
+                            <xs:annotation>
+                                <xs:documentation>Муниципальный район</xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
                         <xs:element xmlns:q2="forestUsageReport"
                                     name="executiveAuthority"
                                     type="ns1:reference">
@@ -66,6 +86,19 @@
                         <xs:element xmlns:q1="http://rosleshoz.gov.ru/xmlns/forestReproduction"
                                     name="row"
                                     type="q1:row"
+                                    minOccurs="0"
+                                    maxOccurs="unbounded" />
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="attachments">
+                <xs:annotation>
+                    <xs:documentation>Присоединенные файлы</xs:documentation>
+                </xs:annotation>
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="file"
+                                    type="ns1:file"
                                     minOccurs="0"
                                     maxOccurs="unbounded" />
                     </xs:sequence>
