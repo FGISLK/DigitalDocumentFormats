@@ -564,7 +564,7 @@
     </xs:complexType>
     <xs:complexType name="serviceInfo">
         <xs:annotation>
-            <xs:documentation>Служеюная информация услуги</xs:documentation>
+            <xs:documentation>Служебная информация услуги</xs:documentation>
         </xs:annotation>
         <xs:sequence>
             <xs:element name="provider"
@@ -580,8 +580,7 @@
                     <xs:documentation>Версия схемы обмена</xs:documentation>
                 </xs:annotation>
             </xs:element>
-            <xs:element name="name"
-                        minOccurs="0">
+            <xs:element name="name">
                 <xs:annotation>
                     <xs:documentation>Наименование схемы обмена</xs:documentation>
                 </xs:annotation>
