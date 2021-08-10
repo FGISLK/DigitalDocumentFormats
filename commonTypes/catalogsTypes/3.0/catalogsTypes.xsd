@@ -344,13 +344,15 @@
                           base="q6:reference">
                 <xs:sequence>
                     <xs:element name="parent"
-                                type="q6:reference">
+                                type="q6:reference"
+                                minOccurs="0">
                         <xs:annotation>
                             <xs:documentation>Родительский показатель</xs:documentation>
                         </xs:annotation>
                     </xs:element>
                     <xs:element name="type"
-                                type="ns0:municipalDistrictType">
+                                type="ns0:municipalDistrictType"
+                                minOccurs="0">
                         <xs:annotation>
                             <xs:documentation>Тип муниципального образования</xs:documentation>
                         </xs:annotation>
