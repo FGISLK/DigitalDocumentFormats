@@ -50,6 +50,17 @@
         </xs:annotation>
         <xs:restriction base="xs:string" />
     </xs:simpleType>
+    <xs:simpleType name="municipalDistrictType">
+        <xs:annotation>
+            <xs:documentation>Типы муниципальных образований</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="Регион" />
+            <xs:enumeration value="Район/Город" />
+            <xs:enumeration value="Поселение" />
+            <xs:enumeration value="Населенный пункт" />
+        </xs:restriction>
+    </xs:simpleType>
     <xs:simpleType name="year">
         <xs:annotation>
             <xs:documentation>Год</xs:documentation>
