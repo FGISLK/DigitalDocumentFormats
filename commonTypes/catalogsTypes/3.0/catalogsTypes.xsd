@@ -335,6 +335,30 @@
                           base="q4:reference" />
         </xs:complexContent>
     </xs:complexType>
+    <xs:complexType name="municipalDistrict">
+        <xs:annotation>
+            <xs:documentation>Муниципальные образования</xs:documentation>
+        </xs:annotation>
+        <xs:complexContent>
+            <xs:extension xmlns:q6="http://rosleshoz.gov.ru/xmlns/cTypes"
+                          base="q6:reference">
+                <xs:sequence>
+                    <xs:element name="parent"
+                                type="q6:reference">
+                        <xs:annotation>
+                            <xs:documentation>Родительский показатель</xs:documentation>
+                        </xs:annotation>
+                    </xs:element>
+                    <xs:element name="type"
+                                type="ns0:municipalDistrictType">
+                        <xs:annotation>
+                            <xs:documentation>Тип муниципального образования</xs:documentation>
+                        </xs:annotation>
+                    </xs:element>
+                </xs:sequence>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
     <xs:complexType name="damageReason">
         <xs:annotation>
             <xs:documentation>Причина повреждения</xs:documentation>
