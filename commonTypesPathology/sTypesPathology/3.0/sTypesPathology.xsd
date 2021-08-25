@@ -1,0 +1,77 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<!--Created with Liquid XML 2013 Designer Edition 11.1.0.4725 (http://www.liquid-technologies.com)-->
+<xs:schema elementFormDefault="qualified"
+           targetNamespace="http://rosleshoz.gov.ru/xmlns/sTypesPathology"
+           version="3.0"
+           xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:simpleType name="occupancyRate">
+        <xs:annotation>
+            <xs:documentation>Степень заселения лесного насаждения</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="Единичная" />
+            <xs:enumeration value="Слабая" />
+            <xs:enumeration value="Средняя" />
+            <xs:enumeration value="Сильная" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="circleDamageLevels">
+        <xs:annotation>
+            <xs:documentation>Степени повреждения по окружности</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="1/4" />
+            <xs:enumeration value="2/4" />
+            <xs:enumeration value="3/4" />
+            <xs:enumeration value="Менее 1/2" />
+            <xs:enumeration value="Более 1/2" />
+            <xs:enumeration value="Менее 3/4" />
+            <xs:enumeration value="Более 3/4" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="discrepancyDataSource">
+        <xs:annotation>
+            <xs:documentation>Источник данных ведомости расхождения</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="ТО" />
+            <xs:enumeration value="Ф" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="pestGrowthPhase">
+        <xs:annotation>
+            <xs:documentation>Фаза развития вредителя</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="Имаго" />
+            <xs:enumeration value="Куколка" />
+            <xs:enumeration value="Личинка" />
+            <xs:enumeration value="Яйцо" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="statementCategory">
+        <xs:annotation>
+            <xs:documentation>Категория состояния</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="Здоровые" />
+            <xs:enumeration value="Ослабленное" />
+            <xs:enumeration value="Сильно ослабленное" />
+            <xs:enumeration value="Усыхающее" />
+            <xs:enumeration value="Свежий сухостой" />
+            <xs:enumeration value="Свежий ветровал" />
+            <xs:enumeration value="Свежий бурелом" />
+            <xs:enumeration value="Старый сухостой" />
+            <xs:enumeration value="Старый ветровал" />
+            <xs:enumeration value="Старый бурелом" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="pestSourceType">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="Затухший очаг" />
+            <xs:enumeration value="Очаг отсутствует" />
+            <xs:enumeration value="Хронический" />
+            <xs:enumeration value="Эпизодический" />
+        </xs:restriction>
+    </xs:simpleType>
+</xs:schema>
