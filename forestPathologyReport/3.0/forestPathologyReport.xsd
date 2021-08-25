@@ -10,13 +10,13 @@
            targetNamespace="http://rosleshoz.gov.ru/xmlns/forestPathologyReport"
            version="3.0"
            xmlns:xs="http://www.w3.org/2001/XMLSchema">
-    <xs:import schemaLocation=".\sTypes.xsd"
+    <xs:import schemaLocation="..\..\commonTypes\sTypes\3.0\sTypes.xsd"
                namespace="http://rosleshoz.gov.ru/xmlns/sTypes" />
-    <xs:import schemaLocation=".\cTypes.xsd"
+    <xs:import schemaLocation="..\..\commonTypes\cTypes\3.0\cTypes.xsd"
                namespace="http://rosleshoz.gov.ru/xmlns/cTypes" />
-    <xs:import schemaLocation=".\cTypesPathology.xsd"
+    <xs:import schemaLocation="..\..\\commonTypesPathology\cTypesPathology\3.0\cTypesPathology.xsd"
                namespace="http://rosleshoz.gov.ru/xmlns/cTypesPathology" />
-    <xs:import schemaLocation=".\sTypesPathology.xsd"
+    <xs:import schemaLocation="..\..\\commonTypesPathology\sTypesPathology\3.0\sTypesPathology.xsd"
                namespace="http://rosleshoz.gov.ru/xmlns/sTypesPathology" />
     <xs:element name="forestPathologyReport"
                 type="tns:forestPathologyReport" />
