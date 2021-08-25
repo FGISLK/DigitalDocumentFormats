@@ -5,9 +5,9 @@
            targetNamespace="http://rosleshoz.gov.ru/xmlns/cTypesPathology"
            version="3.0"
            xmlns:xs="http://www.w3.org/2001/XMLSchema">
-    <xs:import schemaLocation=".\cTypes.xsd"
+    <xs:import schemaLocation="..\..\..\commonTypes\cTypes\3.0\cTypes.xsd"
                namespace="http://rosleshoz.gov.ru/xmlns/cTypes" />
-    <xs:import schemaLocation=".\sTypes.xsd"
+    <xs:import schemaLocation="..\..\..\commonTypes\sTypes\3.0\sTypes.xsd"
                namespace="http://rosleshoz.gov.ru/xmlns/sTypes" />
     <xs:complexType name="mainLocation">
         <xs:annotation>
