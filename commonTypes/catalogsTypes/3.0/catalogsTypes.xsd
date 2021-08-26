@@ -375,8 +375,8 @@
                             <xs:documentation>Сокращенное наименование болезни или вредителя</xs:documentation>
                         </xs:annotation>
                     </xs:element>
-                    <xs:element name="reduction"
-                                type="xs:string">
+                    <xs:element name="parent"
+                                type="q1:reference">
                         <xs:annotation>
                             <xs:documentation>Код группы причин</xs:documentation>
                         </xs:annotation>
