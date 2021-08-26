@@ -1078,12 +1078,9 @@
                 </xs:annotation>
                 <xs:complexType>
                     <xs:sequence>
-                        <xs:element name="notMatchArea"
-                                    type="st:area"
-                                    minOccurs="0"
-                                    default="0">
+                        <xs:element name="match" type="xs:boolean" minOccurs="0" default="false">
                             <xs:annotation>
-                                <xs:documentation>Площадь несоответствия фактической таксационной характеристики лесного насаждения таксационному описанию</xs:documentation>
+                                <xs:documentation>Признак соответствия фактической таксационной характеристики лесного насаждения таксационному описанию</xs:documentation>
                             </xs:annotation>
                         </xs:element>
                         <xs:element name="nonAccordanceReasons">
