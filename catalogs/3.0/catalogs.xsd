@@ -1,8 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <!--Created with Liquid XML 2013 Designer Edition 11.1.0.4725 (http://www.liquid-technologies.com)-->
 <xs:schema xmlns:nsc="http://rosleshoz.gov.ru/xmlns/catalogsTypes"
-           xmlns:ns0="http://rosleshoz.gov.ru/xmlns/sTypes"
            xmlns:ns1="http://rosleshoz.gov.ru/xmlns/cTypes"
+           xmlns:ns0="http://rosleshoz.gov.ru/xmlns/sTypes"
            elementFormDefault="qualified"
            targetNamespace="http://rosleshoz.gov.ru/xmlns/catalogs"
            version="3.0"
@@ -330,7 +330,7 @@
                 <xs:complexType>
                     <xs:sequence>
                         <xs:element name="element"
-                                    type="nsc:damageSymptoms"
+                                    type="nsc:damageSymptom"
                                     minOccurs="0"
                                     maxOccurs="unbounded" />
                     </xs:sequence>
