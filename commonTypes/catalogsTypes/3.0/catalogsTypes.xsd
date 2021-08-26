@@ -367,7 +367,22 @@
         </xs:annotation>
         <xs:complexContent>
             <xs:extension xmlns:q1="http://rosleshoz.gov.ru/xmlns/cTypes"
-                          base="q1:reference" />
+                          base="q1:reference">
+                <xs:sequence>
+                    <xs:element name="reduction"
+                                type="xs:string">
+                        <xs:annotation>
+                            <xs:documentation>Сокращенное наименование болезни или вредителя</xs:documentation>
+                        </xs:annotation>
+                    </xs:element>
+                    <xs:element name="reduction"
+                                type="xs:string">
+                        <xs:annotation>
+                            <xs:documentation>Код группы причин</xs:documentation>
+                        </xs:annotation>
+                    </xs:element>
+                </xs:sequence>
+            </xs:extension>
         </xs:complexContent>
     </xs:complexType>
     <xs:complexType name="damageSymptoms">
