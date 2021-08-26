@@ -385,7 +385,7 @@
             </xs:extension>
         </xs:complexContent>
     </xs:complexType>
-    <xs:complexType name="damageSymptoms">
+    <xs:complexType name="damageSymptom">
         <xs:annotation>
             <xs:documentation>Признак повреждения</xs:documentation>
         </xs:annotation>
