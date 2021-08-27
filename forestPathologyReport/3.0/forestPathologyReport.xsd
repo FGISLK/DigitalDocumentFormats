@@ -1,5 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
-<!--Created with Liquid XML 2013 Designer Edition 11.1.0.4725 (http://www.liquid-technologies.com)-->
+<?xml version="1.0" encoding="utf-8" ?>
 <xs:schema xmlns:stp="http://rosleshoz.gov.ru/xmlns/sTypesPathology"
            xmlns:ct="http://rosleshoz.gov.ru/xmlns/cTypes"
            xmlns:st="http://rosleshoz.gov.ru/xmlns/sTypes"
@@ -775,8 +774,7 @@
     </xs:complexType>
     <xs:complexType name="forestPathologyExaminationLocationRow">
         <xs:sequence>
-            <xs:element xmlns:q9="forestUsageReport"
-                        name="location"
+            <xs:element name="location"
                         type="ctp:pathologyLocation">
                 <xs:annotation>
                     <xs:documentation>Данные местоположения лесопатологического выдела</xs:documentation>
@@ -2763,17 +2761,15 @@
                                 <xs:documentation>Лесничество</xs:documentation>
                             </xs:annotation>
                         </xs:element>
-                        <xs:element xmlns:q20="http://rosleshoz.gov.ru/xmlns/cTypes"
-                                    name="subforestry"
-                                    type="q20:reference"
+                        <xs:element name="subforestry"
+                                    type="ct:reference"
                                     minOccurs="0">
                             <xs:annotation>
                                 <xs:documentation>Наименование участкового лесничества - элемент справочника "Участковые лесничества"</xs:documentation>
                             </xs:annotation>
                         </xs:element>
-                        <xs:element xmlns:q21="http://rosleshoz.gov.ru/xmlns/cTypes"
-                                    name="tract"
-                                    type="q21:reference"
+                        <xs:element name="tract"
+                                    type="ct:reference"
                                     minOccurs="0">
                             <xs:annotation>
                                 <xs:documentation>Наименование урочища (при наличии) - элемент справочника "Урочища"</xs:documentation>
@@ -3871,16 +3867,14 @@
                                 <xs:documentation>Лесничество</xs:documentation>
                             </xs:annotation>
                         </xs:element>
-                        <xs:element xmlns:q20="http://rosleshoz.gov.ru/xmlns/cTypes"
-                                    name="subforestry"
-                                    type="q20:reference">
+                        <xs:element name="subforestry"
+                                    type="ct:reference">
                             <xs:annotation>
                                 <xs:documentation>Наименование участкового лесничества - элемент справочника "Участковые лесничества"</xs:documentation>
                             </xs:annotation>
                         </xs:element>
-                        <xs:element xmlns:q21="http://rosleshoz.gov.ru/xmlns/cTypes"
-                                    name="tract"
-                                    type="q21:reference"
+                        <xs:element name="tract"
+                                    type="ct:reference"
                                     minOccurs="0">
                             <xs:annotation>
                                 <xs:documentation>Наименование урочища (при наличии) - элемент справочника "Урочища"</xs:documentation>
