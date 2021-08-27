@@ -27,7 +27,7 @@
             <xs:element name="serviceInfo"
                         type="ct:serviceInfo">
                 <xs:annotation>
-                    <xs:documentation>Служеюная информация услуги</xs:documentation>
+                    <xs:documentation>Служебная информация услуги</xs:documentation>
                 </xs:annotation>
             </xs:element>
             <xs:element name="number"
