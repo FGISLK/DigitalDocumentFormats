@@ -51,6 +51,13 @@
                                 <xs:documentation>Субъект РФ</xs:documentation>
                             </xs:annotation>
                         </xs:element>
+                        <xs:element name="municipalDistrict"
+                                    type="ns0:reference"
+                                    minOccurs="0">
+                            <xs:annotation>
+                                <xs:documentation>Муниципальный район</xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
                         <xs:element name="executiveAuthority"
                                     type="ns0:reference">
                             <xs:annotation>
