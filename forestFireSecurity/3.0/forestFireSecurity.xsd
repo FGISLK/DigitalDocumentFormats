@@ -36,6 +36,12 @@
                                 <xs:documentation>Субъект РФ</xs:documentation>
                             </xs:annotation>
                         </xs:element>
+                        <xs:element name="forestry"
+                                    type="ns1:reference">
+                            <xs:annotation>
+                                <xs:documentation>Лесничество</xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
                         <xs:element name="municipalDistrict"
                                     type="ns1:reference"
                                     minOccurs="0">
