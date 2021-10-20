@@ -37,7 +37,8 @@
                             </xs:annotation>
                         </xs:element>
                         <xs:element name="forestry"
-                                    type="ns1:reference">
+                                    type="ns1:reference"
+                                    minOccurs="0">
                             <xs:annotation>
                                 <xs:documentation>Лесничество</xs:documentation>
                             </xs:annotation>
