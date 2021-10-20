@@ -1,5 +1,4 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<!--Created with Liquid XML 2013 Designer Edition 11.1.0.4725 (http://www.liquid-technologies.com)-->
 <xs:schema xmlns:ns0="http://rosleshoz.gov.ru/xmlns/sTypes"
            xmlns:ns1="http://rosleshoz.gov.ru/xmlns/cTypes"
            elementFormDefault="qualified"
@@ -31,6 +30,13 @@
                                     type="ns1:reference">
                             <xs:annotation>
                                 <xs:documentation>Наименование органа государственной власти, органа местного самоуправления</xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                        <xs:element name="forestry"
+                                    type="ns1:reference"
+                                    minOccurs="0">
+                            <xs:annotation>
+                                <xs:documentation>Лесничество</xs:documentation>
                             </xs:annotation>
                         </xs:element>
                         <xs:element xmlns:q4="forestUsageReport"
