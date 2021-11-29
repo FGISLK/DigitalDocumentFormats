@@ -165,4 +165,22 @@
             <xs:maxInclusive value="9999999999.9999" />
         </xs:restriction>
     </xs:simpleType>
+    <xs:simpleType name="ageGroup">
+        <xs:annotation>
+            <xs:documentation>Группы возраста. 
+Возмодные значения:
+1 - Молодняки;
+2 - Средневозрастные;
+3 - Приспевающие;
+4 - Спелые;
+5 - Перестойные</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:int">
+            <xs:enumeration value="1" />
+            <xs:enumeration value="2" />
+            <xs:enumeration value="3" />
+            <xs:enumeration value="4" />
+            <xs:enumeration value="5" />
+        </xs:restriction>
+    </xs:simpleType>
 </xs:schema>
