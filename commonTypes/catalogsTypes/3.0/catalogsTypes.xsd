@@ -430,4 +430,31 @@
                           base="q1:reference" />
         </xs:complexContent>
     </xs:complexType>
+    <xs:complexType name="nameLand">
+        <xs:annotation>
+            <xs:documentation>Наименования земель лесного фонда</xs:documentation>
+        </xs:annotation>
+        <xs:complexContent>
+            <xs:extension xmlns:q1="http://rosleshoz.gov.ru/xmlns/cTypes"
+                          base="q1:reference" />
+        </xs:complexContent>
+    </xs:complexType>
+    <xs:complexType name="especiallyProtectiveArea">
+        <xs:annotation>
+            <xs:documentation>Особо-защитные участки (ОЗУ)</xs:documentation>
+        </xs:annotation>
+        <xs:complexContent>
+            <xs:extension xmlns:q1="http://rosleshoz.gov.ru/xmlns/cTypes"
+                          base="q1:reference" />
+        </xs:complexContent>
+    </xs:complexType>
+    <xs:complexType name="floor">
+        <xs:annotation>
+            <xs:documentation>Ярусы насаждений.</xs:documentation>
+        </xs:annotation>
+        <xs:complexContent>
+            <xs:extension xmlns:q1="http://rosleshoz.gov.ru/xmlns/cTypes"
+                          base="q1:reference" />
+        </xs:complexContent>
+    </xs:complexType>
 </xs:schema>
