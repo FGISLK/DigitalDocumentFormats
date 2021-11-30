@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <!--Created with Liquid XML 2013 Designer Edition 11.1.0.4725 (http://www.liquid-technologies.com)-->
-<xs:schema xmlns:ns2="http://rosleshoz.gov.ru/xmlns/sTypes"
-           xmlns:ns0="http://rosleshoz.gov.ru/xmlns/cTypes"
+<xs:schema xmlns:ns0="http://rosleshoz.gov.ru/xmlns/cTypes"
+           xmlns:ns2="http://rosleshoz.gov.ru/xmlns/sTypes"
            elementFormDefault="qualified"
            targetNamespace="http://rosleshoz.gov.ru/xmlns/forestPlotDesignDocumentation"
            version="3.0"
@@ -10,8 +10,8 @@
                namespace="http://rosleshoz.gov.ru/xmlns/cTypes" />
     <xs:import schemaLocation="..\..\commonTypes\sTypes\3.0\sTypes.xsd"
                namespace="http://rosleshoz.gov.ru/xmlns/sTypes" />
-    <xs:element name="forestPlotsDesignDocumentation"
-                xmlns:q1="http://rosleshoz.gov.ru/xmlns/forestPlotDesignDocumentation"
+    <xs:element xmlns:q1="http://rosleshoz.gov.ru/xmlns/forestPlotDesignDocumentation"
+                name="forestPlotsDesignDocumentation"
                 type="q1:forestPlotDesignDocumentation">
         <xs:annotation>
             <xs:documentation>Корневой элемент - "Проектная документация на лесной участок"</xs:documentation>
@@ -57,8 +57,8 @@
                 </xs:annotation>
                 <xs:complexType>
                     <xs:sequence>
-                        <xs:element name="row"
-                                    xmlns:q2="http://rosleshoz.gov.ru/xmlns/forestPlotDesignDocumentation"
+                        <xs:element xmlns:q2="http://rosleshoz.gov.ru/xmlns/forestPlotDesignDocumentation"
+                                    name="row"
                                     type="q2:landDistributionRow"
                                     minOccurs="1"
                                     maxOccurs="1" />
@@ -71,8 +71,8 @@
                 </xs:annotation>
                 <xs:complexType>
                     <xs:sequence>
-                        <xs:element name="row"
-                                    xmlns:q3="http://rosleshoz.gov.ru/xmlns/forestPlotDesignDocumentation"
+                        <xs:element xmlns:q3="http://rosleshoz.gov.ru/xmlns/forestPlotDesignDocumentation"
+                                    name="row"
                                     type="q3:plantingCharacteristicsRow"
                                     minOccurs="0"
                                     maxOccurs="1" />
@@ -85,8 +85,8 @@
                 </xs:annotation>
                 <xs:complexType>
                     <xs:sequence>
-                        <xs:element name="row"
-                                    xmlns:q4="http://rosleshoz.gov.ru/xmlns/forestPlotDesignDocumentation"
+                        <xs:element xmlns:q4="http://rosleshoz.gov.ru/xmlns/forestPlotDesignDocumentation"
+                                    name="row"
                                     type="q4:averageTaxationRatesRow"
                                     minOccurs="0"
                                     maxOccurs="unbounded" />
@@ -99,8 +99,8 @@
                 </xs:annotation>
                 <xs:complexType>
                     <xs:sequence>
-                        <xs:element name="row"
-                                    xmlns:q5="http://rosleshoz.gov.ru/xmlns/forestPlotDesignDocumentation"
+                        <xs:element xmlns:q5="http://rosleshoz.gov.ru/xmlns/forestPlotDesignDocumentation"
+                                    name="row"
                                     type="q5:objectRow"
                                     minOccurs="0"
                                     maxOccurs="unbounded" />
@@ -113,8 +113,8 @@
                 </xs:annotation>
                 <xs:complexType>
                     <xs:sequence>
-                        <xs:element name="row"
-                                    xmlns:q6="http://rosleshoz.gov.ru/xmlns/forestPlotDesignDocumentation"
+                        <xs:element xmlns:q6="http://rosleshoz.gov.ru/xmlns/forestPlotDesignDocumentation"
+                                    name="row"
                                     type="q6:objectRow"
                                     minOccurs="0"
                                     maxOccurs="unbounded" />
@@ -127,8 +127,8 @@
                 </xs:annotation>
                 <xs:complexType>
                     <xs:sequence>
-                        <xs:element name="row"
-                                    xmlns:q7="http://rosleshoz.gov.ru/xmlns/forestPlotDesignDocumentation"
+                        <xs:element xmlns:q7="http://rosleshoz.gov.ru/xmlns/forestPlotDesignDocumentation"
+                                    name="row"
                                     type="q7:objectRow"
                                     minOccurs="0"
                                     maxOccurs="unbounded" />
@@ -141,8 +141,8 @@
                 </xs:annotation>
                 <xs:complexType>
                     <xs:sequence>
-                        <xs:element name="row"
-                                    xmlns:q8="http://rosleshoz.gov.ru/xmlns/forestPlotDesignDocumentation"
+                        <xs:element xmlns:q8="http://rosleshoz.gov.ru/xmlns/forestPlotDesignDocumentation"
+                                    name="row"
                                     type="q8:especiallyProtectiveAreaRow"
                                     minOccurs="0"
                                     maxOccurs="unbounded" />
@@ -155,8 +155,8 @@
                 </xs:annotation>
                 <xs:complexType>
                     <xs:sequence>
-                        <xs:element name="row"
-                                    xmlns:q9="http://rosleshoz.gov.ru/xmlns/forestPlotDesignDocumentation"
+                        <xs:element xmlns:q9="http://rosleshoz.gov.ru/xmlns/forestPlotDesignDocumentation"
+                                    name="row"
                                     type="q9:cutdownPlantationRow"
                                     minOccurs="0"
                                     maxOccurs="unbounded" />
@@ -272,7 +272,7 @@
             <xs:element name="location"
                         type="ns0:location">
                 <xs:annotation>
-                    <xs:documentation></xs:documentation>
+                    <xs:documentation />
                 </xs:annotation>
             </xs:element>
             <xs:element name="nameLand"
@@ -400,7 +400,7 @@
             <xs:element name="location"
                         type="ns0:location">
                 <xs:annotation>
-                    <xs:documentation></xs:documentation>
+                    <xs:documentation />
                 </xs:annotation>
             </xs:element>
             <xs:element name="volume"
@@ -432,7 +432,7 @@
             <xs:element name="location"
                         type="ns0:location">
                 <xs:annotation>
-                    <xs:documentation></xs:documentation>
+                    <xs:documentation />
                 </xs:annotation>
             </xs:element>
             <xs:element name="especiallyProtectiveArea"
@@ -457,7 +457,7 @@
             <xs:element name="location"
                         type="ns0:location">
                 <xs:annotation>
-                    <xs:documentation></xs:documentation>
+                    <xs:documentation />
                 </xs:annotation>
             </xs:element>
             <xs:element name="costСategory"
@@ -472,8 +472,8 @@
                 </xs:annotation>
                 <xs:complexType>
                     <xs:sequence>
-                        <xs:element name="floor"
-                                    xmlns:q10="http://rosleshoz.gov.ru/xmlns/forestPlotDesignDocumentation"
+                        <xs:element xmlns:q10="http://rosleshoz.gov.ru/xmlns/forestPlotDesignDocumentation"
+                                    name="floor"
                                     type="q10:floorRow"
                                     minOccurs="1"
                                     maxOccurs="unbounded">
@@ -497,18 +497,6 @@
                     <xs:documentation>Ярус</xs:documentation>
                 </xs:annotation>
             </xs:element>
-            <xs:element name="diametr"
-                        type="xs:decimal">
-                <xs:annotation>
-                    <xs:documentation>Средний диаметр насаждения</xs:documentation>
-                </xs:annotation>
-            </xs:element>
-            <xs:element name="height"
-                        type="xs:decimal">
-                <xs:annotation>
-                    <xs:documentation>Средняя высота насаждения</xs:documentation>
-                </xs:annotation>
-            </xs:element>
             <xs:element name="volume"
                         type="ns2:valueCutting">
                 <xs:annotation>
@@ -516,8 +504,8 @@
                 </xs:annotation>
             </xs:element>
             <xs:sequence>
-                <xs:element name="breedComposition"
-                            xmlns:q11="http://rosleshoz.gov.ru/xmlns/forestPlotDesignDocumentation"
+                <xs:element xmlns:q11="http://rosleshoz.gov.ru/xmlns/forestPlotDesignDocumentation"
+                            name="breedComposition"
                             type="q11:breedCompositionRow"
                             minOccurs="1"
                             maxOccurs="unbounded">
@@ -542,7 +530,19 @@
             <xs:element name="coefficient"
                         type="xs:string">
                 <xs:annotation>
-                    <xs:documentation>Коэффициент состава насаждения</xs:documentation>
+                    <xs:documentation>Коэффициент состава</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="diametr"
+                        type="xs:decimal">
+                <xs:annotation>
+                    <xs:documentation>Средний диаметр</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="height"
+                        type="xs:decimal">
+                <xs:annotation>
+                    <xs:documentation>Средняя высота</xs:documentation>
                 </xs:annotation>
             </xs:element>
             <xs:element name="marketabilityClass"
