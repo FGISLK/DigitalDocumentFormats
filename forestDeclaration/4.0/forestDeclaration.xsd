@@ -88,16 +88,15 @@
                                 <xs:documentation>Договор</xs:documentation>
                             </xs:annotation>
                         </xs:element>
-                        <xs:sequence>
-                            <xs:element name="usageType"
-                                        type="ns0:reference"
-                                        minOccurs="0"
-                                        maxOccurs="unbounded">
-                                <xs:annotation>
-                                    <xs:documentation>Вид(ы) использования лесов</xs:documentation>
-                                </xs:annotation>
-                            </xs:element>
-                        </xs:sequence>
+                        <xs:element name="usageType">
+                            <xs:complexType>
+                                <xs:sequence>
+                                    <xs:element name="row"
+                                                type="ns0:reference"
+                                                minOccurs="0" />
+                                </xs:sequence>
+                            </xs:complexType>
+                        </xs:element>
                         <xs:element name="basisForChange"
                                     type="xs:string"
                                     minOccurs="0">
@@ -119,16 +118,6 @@
                                     type="q1:harvestingWoodRow"
                                     minOccurs="0"
                                     maxOccurs="unbounded" />
-                        <xs:sequence>
-                            <xs:element name="usageType"
-                                        type="ns0:reference"
-                                        minOccurs="0"
-                                        maxOccurs="unbounded">
-                                <xs:annotation>
-                                    <xs:documentation>Вид использования лесов</xs:documentation>
-                                </xs:annotation>
-                            </xs:element>
-                        </xs:sequence>
                     </xs:sequence>
                 </xs:complexType>
             </xs:element>
@@ -327,8 +316,8 @@
                     <xs:documentation>Площадь объекта, га</xs:documentation>
                 </xs:annotation>
             </xs:element>
-            <xs:element name="cutting"
-                        xmlns:q1="http://rosleshoz.gov.ru/xmlns/forestDeclaration"
+            <xs:element xmlns:q1="http://rosleshoz.gov.ru/xmlns/forestDeclaration"
+                        name="cutting"
                         type="q1:cutting"
                         minOccurs="0">
                 <xs:annotation>
@@ -369,8 +358,8 @@
                     <xs:documentation>Объем изъятия</xs:documentation>
                 </xs:annotation>
             </xs:element>
-            <xs:element name="cutting"
-                        xmlns:q2="http://rosleshoz.gov.ru/xmlns/forestDeclaration"
+            <xs:element xmlns:q2="http://rosleshoz.gov.ru/xmlns/forestDeclaration"
+                        name="cutting"
                         type="q2:cutting"
                         minOccurs="0">
                 <xs:annotation>
@@ -408,8 +397,8 @@
                     <xs:documentation>Площадьобъекта, га</xs:documentation>
                 </xs:annotation>
             </xs:element>
-            <xs:element name="cutting"
-                        xmlns:q3="http://rosleshoz.gov.ru/xmlns/forestDeclaration"
+            <xs:element xmlns:q3="http://rosleshoz.gov.ru/xmlns/forestDeclaration"
+                        name="cutting"
                         type="q3:cutting"
                         minOccurs="0">
                 <xs:annotation>
