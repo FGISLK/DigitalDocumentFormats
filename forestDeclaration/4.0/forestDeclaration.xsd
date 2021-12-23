@@ -88,7 +88,10 @@
                                 <xs:documentation>Договор</xs:documentation>
                             </xs:annotation>
                         </xs:element>
-                        <xs:element name="usageType">
+                        <xs:element name="usageTypes">
+                            <xs:annotation>
+                                <xs:documentation>Виды использования лесов</xs:documentation>
+                            </xs:annotation>
                             <xs:complexType>
                                 <xs:sequence>
                                     <xs:element name="row"
