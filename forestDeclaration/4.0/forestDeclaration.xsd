@@ -94,7 +94,8 @@
                                     <xs:element name="row"
                                                 xmlns:q1="http://rosleshoz.gov.ru/xmlns/forestDeclaration"
                                                 type="q1:usageTypeRow"
-                                                minOccurs="0" />
+                                                minOccurs="0"
+                                                maxOccurs="unbounded" />
                                 </xs:sequence>
                             </xs:complexType>
                         </xs:element>
