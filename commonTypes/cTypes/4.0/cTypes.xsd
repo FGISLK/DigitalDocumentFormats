@@ -332,15 +332,13 @@
                 </xs:annotation>
             </xs:element>
             <xs:element name="quarter"
-                        type="ns0:quarter"
-                        default="1">
+                        type="ns0:quarter">
                 <xs:annotation>
                     <xs:documentation>N Лесного квартала</xs:documentation>
                 </xs:annotation>
             </xs:element>
             <xs:element name="taxationUnit"
-                        type="ns0:taxationUnit"
-                        default="1">
+                        type="ns0:taxationUnit">
                 <xs:annotation>
                     <xs:documentation>№ лесотаксационного выдела</xs:documentation>
                 </xs:annotation>
