@@ -208,7 +208,7 @@
             </xs:element>
             <xs:element name="locationInformation">
                 <xs:annotation>
-                    <xs:documentation>Таблица Приложение 4</xs:documentation>
+                    <xs:documentation>Таблица Приложение 5</xs:documentation>
                 </xs:annotation>
                 <xs:complexType>
                     <xs:sequence>
