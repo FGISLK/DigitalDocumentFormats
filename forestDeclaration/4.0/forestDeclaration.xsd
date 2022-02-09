@@ -204,7 +204,7 @@
                     <xs:sequence>
                         <xs:element xmlns:q1="http://rosleshoz.gov.ru/xmlns/forestDeclaration"
                                     name="row"
-                                    type="q1:locationInformation"
+                                    type="q1:locationInformationRow"
                                     minOccurs="0"
                                     maxOccurs="unbounded" />
                     </xs:sequence>
@@ -460,7 +460,7 @@
             </xs:element>
         </xs:sequence>
     </xs:complexType>
-    <xs:complexType name="locationInformation">
+    <xs:complexType name="locationInformationRow">
         <xs:sequence>
             <xs:element name="location"
                         type="ns0:location" />
