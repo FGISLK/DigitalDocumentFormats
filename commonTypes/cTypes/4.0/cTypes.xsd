@@ -331,17 +331,25 @@
                     <xs:documentation>Наименование урочища (при наличии) - элемент справочника "Урочища"</xs:documentation>
                 </xs:annotation>
             </xs:element>
-            <xs:element name="quarter"
-                        type="ns0:quarter">
+            <xs:element name="quarter">
                 <xs:annotation>
                     <xs:documentation>N Лесного квартала</xs:documentation>
                 </xs:annotation>
+                <xs:simpleType>
+                    <xs:restriction base="ns0:quarter">
+                        <xs:minLength value="0" />
+                    </xs:restriction>
+                </xs:simpleType>
             </xs:element>
-            <xs:element name="taxationUnit"
-                        type="ns0:taxationUnit">
+            <xs:element name="taxationUnit">
                 <xs:annotation>
                     <xs:documentation>№ лесотаксационного выдела</xs:documentation>
                 </xs:annotation>
+                <xs:simpleType>
+                    <xs:restriction base="ns0:taxationUnit">
+                        <xs:minLength value="0" />
+                    </xs:restriction>
+                </xs:simpleType>
             </xs:element>
             <xs:element name="cuttingArea"
                         type="ns0:cuttingArea"
