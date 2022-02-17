@@ -504,8 +504,8 @@
                 <xs:complexType>
                     <xs:sequence>
                         <xs:element xmlns:q6="http://rosleshoz.gov.ru/xmlns/forestDeclaration"
-                                    name="element"
-                                    type="q6:explicationElement"
+                                    name="row"
+                                    type="q6:explicationRow"
                                     minOccurs="0"
                                     maxOccurs="unbounded" />
                     </xs:sequence>
@@ -519,8 +519,8 @@
                 <xs:complexType>
                     <xs:sequence>
                         <xs:element xmlns:q6="http://rosleshoz.gov.ru/xmlns/forestDeclaration"
-                                    name="element"
-                                    type="q6:explicationElement"
+                                    name="row"
+                                    type="q6:explicationRow"
                                     minOccurs="0"
                                     maxOccurs="unbounded" />
                     </xs:sequence>
@@ -528,7 +528,7 @@
             </xs:element>
         </xs:sequence>
     </xs:complexType>
-    <xs:complexType name="explicationElement">
+    <xs:complexType name="explicationRow">
         <xs:sequence>
             <xs:element name="objectNumber"
                         type="xs:string">
@@ -549,11 +549,11 @@
                 </xs:annotation>
             </xs:element>
             <xs:element name="lineDirection"
-                        minOccurs="0"
-                        type="xs:string">
+                        type="xs:string"
+                        minOccurs="0">
                 <xs:annotation>
                     <xs:documentation>Направление линий,румбы (азимуты), град.</xs:documentation>
-                </xs:annotation>              
+                </xs:annotation>
             </xs:element>
             <xs:element name="lineLength"
                         minOccurs="0">
