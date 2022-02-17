@@ -476,7 +476,8 @@
     <xs:complexType name="locationInformationRow">
         <xs:sequence>
             <xs:element name="location"
-                        type="ns0:location" />
+                        type="ns0:location"
+                        minOccurs="0" />
             <xs:element name="objectNumber"
                         type="xs:string">
                 <xs:annotation>
