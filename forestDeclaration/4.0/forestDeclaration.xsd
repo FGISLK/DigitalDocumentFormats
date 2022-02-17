@@ -549,18 +549,11 @@
                 </xs:annotation>
             </xs:element>
             <xs:element name="lineDirection"
-                        minOccurs="0">
+                        minOccurs="0"
+                        type="xs:string">
                 <xs:annotation>
                     <xs:documentation>Направление линий,румбы (азимуты), град.</xs:documentation>
-                </xs:annotation>
-                <xs:simpleType>
-                    <xs:restriction base="xs:decimal">
-                        <xs:minInclusive value="0.00" />
-                        <xs:maxInclusive value="360.00" />
-                        <xs:fractionDigits value="2" />
-                        <xs:totalDigits value="6" />
-                    </xs:restriction>
-                </xs:simpleType>
+                </xs:annotation>              
             </xs:element>
             <xs:element name="lineLength"
                         minOccurs="0">
