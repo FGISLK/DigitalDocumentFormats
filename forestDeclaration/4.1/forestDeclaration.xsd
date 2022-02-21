@@ -41,7 +41,7 @@
             </xs:element>
             <xs:element name="header">
                 <xs:annotation>
-                    <xs:documentation>Общие сведения об отчете</xs:documentation>
+                    <xs:documentation>Общие сведения о документе</xs:documentation>
                 </xs:annotation>
                 <xs:complexType>
                     <xs:sequence>
@@ -73,7 +73,7 @@
                         <xs:element name="partner"
                                     type="ns0:partner">
                             <xs:annotation>
-                                <xs:documentation>Отправитель документа</xs:documentation>
+                                <xs:documentation>Лесопользователь</xs:documentation>
                             </xs:annotation>
                         </xs:element>
                         <xs:element name="signerData"
@@ -183,7 +183,7 @@
             </xs:element>
             <xs:element name="schemeHarvestingWood">
                 <xs:annotation>
-                    <xs:documentation>Таблица Приложение 3</xs:documentation>
+                    <xs:documentation>Таблица "Общая схема расположения мест проведения работ при использовании лесов в целях заготовки древесины"</xs:documentation>
                 </xs:annotation>
                 <xs:complexType>
                     <xs:sequence>
@@ -197,7 +197,7 @@
             </xs:element>
             <xs:element name="schemeObject">
                 <xs:annotation>
-                    <xs:documentation>Таблица Приложение 4</xs:documentation>
+                    <xs:documentation>Таблица "Схемаы) размещения лесосеки, объекта лесной инфраструктуры, объекта лесоперерабатывающей тнфраструктуры и объекта, не связанного с созданием лесной инфраструктуры"</xs:documentation>
                 </xs:annotation>
                 <xs:complexType>
                     <xs:sequence>
@@ -211,7 +211,7 @@
             </xs:element>
             <xs:element name="locationInformation">
                 <xs:annotation>
-                    <xs:documentation>Таблица Приложение 5</xs:documentation>
+                    <xs:documentation>Таблица "Сведения о расположении лесосек, объектов, приведенных на схеме(ах) расзмещения в приложении 4 к форме лесной декларации"</xs:documentation>
                 </xs:annotation>
                 <xs:complexType>
                     <xs:sequence>
