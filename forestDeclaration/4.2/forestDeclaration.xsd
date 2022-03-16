@@ -1,0 +1,593 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<!--Created with Liquid XML 2013 Designer Edition 11.1.0.4725 (http://www.liquid-technologies.com)-->
+<xs:schema xmlns:ns0="http://rosleshoz.gov.ru/xmlns/cTypes"
+           xmlns:ns1="http://rosleshoz.gov.ru/xmlns/sTypes"
+           elementFormDefault="qualified"
+           targetNamespace="http://rosleshoz.gov.ru/xmlns/forestDeclaration"
+           version="4.2"
+           xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:import schemaLocation="..\..\commonTypes\cTypes\4.0\cTypes.xsd"
+               namespace="http://rosleshoz.gov.ru/xmlns/cTypes" />
+    <xs:import schemaLocation="..\..\commonTypes\sTypes\3.0\sTypes.xsd"
+               namespace="http://rosleshoz.gov.ru/xmlns/sTypes" />
+    <xs:element xmlns:q1="http://rosleshoz.gov.ru/xmlns/forestDeclaration"
+                name="forestDeclaration"
+                type="q1:forestDeclaration" />
+    <xs:complexType name="forestDeclaration">
+        <xs:annotation>
+            <xs:documentation>Описание лесной декларации</xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+            <xs:element name="serviceInfo"
+                        type="ns0:serviceInfo" />
+            <xs:element name="number"
+                        default="б/н">
+                <xs:annotation>
+                    <xs:documentation>Номер документа</xs:documentation>
+                </xs:annotation>
+                <xs:simpleType>
+                    <xs:restriction base="xs:string">
+                        <xs:minLength value="1" />
+                        <xs:maxLength value="25" />
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:element>
+            <xs:element name="date"
+                        type="xs:date"
+                        default="2016-07-15">
+                <xs:annotation>
+                    <xs:documentation>Дата документа</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="header">
+                <xs:annotation>
+                    <xs:documentation>Общие сведения о документе</xs:documentation>
+                </xs:annotation>
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="subject"
+                                    type="ns0:reference">
+                            <xs:annotation>
+                                <xs:documentation>Субъект РФ</xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                        <xs:element name="forestry"
+                                    type="ns0:reference"
+                                    minOccurs="0">
+                            <xs:annotation>
+                                <xs:documentation>Лесничество</xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                        <xs:element name="executiveAuthority"
+                                    type="ns0:reference">
+                            <xs:annotation>
+                                <xs:documentation>Наименование органа государственной власти, органа местного самоуправления</xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                        <xs:element name="period"
+                                    type="ns0:period">
+                            <xs:annotation>
+                                <xs:documentation>Период действия документа</xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                        <xs:element name="partner"
+                                    type="ns0:partner">
+                            <xs:annotation>
+                                <xs:documentation>Лесопользователь</xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                        <xs:element name="signerData"
+                                    type="ns0:signerData">
+                            <xs:annotation>
+                                <xs:documentation>Подписант документа</xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                        <xs:element name="contract"
+                                    type="ns0:contract">
+                            <xs:annotation>
+                                <xs:documentation>Договор</xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                        <xs:element name="usageTypes">
+                            <xs:annotation>
+                                <xs:documentation>Виды использования лесов</xs:documentation>
+                            </xs:annotation>
+                            <xs:complexType>
+                                <xs:sequence>
+                                    <xs:element xmlns:q1="http://rosleshoz.gov.ru/xmlns/forestDeclaration"
+                                                name="row"
+                                                type="q1:usageTypeRow"
+                                                minOccurs="0"
+                                                maxOccurs="unbounded" />
+                                </xs:sequence>
+                            </xs:complexType>
+                        </xs:element>
+                        <xs:element name="basisForChange"
+                                    type="xs:string"
+                                    minOccurs="0">
+                            <xs:annotation>
+                                <xs:documentation>Основание внесения изменений в лесную декларацию</xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                        <xs:element name="coordinateSystem"
+                                    minOccurs="0"
+                                    default="WGS-84">
+                            <xs:annotation>
+                                <xs:documentation>Система координат</xs:documentation>
+                            </xs:annotation>
+                            <xs:simpleType>
+                                <xs:restriction base="xs:string">
+                                    <xs:enumeration value="WGS-84" />
+                                    <xs:enumeration value="ГСК-2011" />
+                                </xs:restriction>
+                            </xs:simpleType>
+                        </xs:element>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="harvestingWood">
+                <xs:annotation>
+                    <xs:documentation>Таблица «Объем использования лесов в целях заготовки древесины и (или) живицы»</xs:documentation>
+                </xs:annotation>
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element xmlns:q1="http://rosleshoz.gov.ru/xmlns/forestDeclaration"
+                                    name="row"
+                                    type="q1:harvestingWoodRow"
+                                    minOccurs="0"
+                                    maxOccurs="unbounded" />
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="harvestingObject">
+                <xs:annotation>
+                    <xs:documentation>Таблица «Создание (снос) объектов лесной инфраструктуры»</xs:documentation>
+                </xs:annotation>
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element xmlns:q1="http://rosleshoz.gov.ru/xmlns/forestDeclaration"
+                                    name="row"
+                                    type="q1:harvestingObjectRow"
+                                    minOccurs="0"
+                                    maxOccurs="unbounded" />
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="otherUsageTypes">
+                <xs:annotation>
+                    <xs:documentation>Таблица «Объем использования лесов в целях, не связанных с заготовкой древесины и (или) живицы»</xs:documentation>
+                </xs:annotation>
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element xmlns:q2="http://rosleshoz.gov.ru/xmlns/forestDeclaration"
+                                    name="row"
+                                    type="q2:otherUsageTypesRow"
+                                    minOccurs="0"
+                                    maxOccurs="unbounded" />
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="otherUsageObjects">
+                <xs:annotation>
+                    <xs:documentation>Таблица «Создание (снос) объектов лесной инфраструктуры, лесоперерабатывающей инфраструктуры и объектов, не связанных с созданием лесной инфраструктуры»</xs:documentation>
+                </xs:annotation>
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element xmlns:q3="http://rosleshoz.gov.ru/xmlns/forestDeclaration"
+                                    name="row"
+                                    type="q3:otherUsageObjectsRow"
+                                    minOccurs="0"
+                                    maxOccurs="unbounded" />
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="schemeHarvestingWood">
+                <xs:annotation>
+                    <xs:documentation>Таблица "Общая схема расположения мест проведения работ при использовании лесов в целях заготовки древесины"</xs:documentation>
+                </xs:annotation>
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element xmlns:q4="http://rosleshoz.gov.ru/xmlns/forestDeclaration"
+                                    name="row"
+                                    type="q4:schemeRow"
+                                    minOccurs="0"
+                                    maxOccurs="unbounded" />
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="schemeObject">
+                <xs:annotation>
+                    <xs:documentation>Таблица "Схемаы) размещения лесосеки, объекта лесной инфраструктуры, объекта лесоперерабатывающей тнфраструктуры и объекта, не связанного с созданием лесной инфраструктуры"</xs:documentation>
+                </xs:annotation>
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element xmlns:q4="http://rosleshoz.gov.ru/xmlns/forestDeclaration"
+                                    name="row"
+                                    type="q4:schemeRow"
+                                    minOccurs="0"
+                                    maxOccurs="unbounded" />
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="locationInformation">
+                <xs:annotation>
+                    <xs:documentation>Таблица "Сведения о расположении лесосек, объектов, приведенных на схеме(ах) расзмещения в приложении 4 к форме лесной декларации"</xs:documentation>
+                </xs:annotation>
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element xmlns:q1="http://rosleshoz.gov.ru/xmlns/forestDeclaration"
+                                    name="row"
+                                    type="q1:locationInformationRow"
+                                    minOccurs="0"
+                                    maxOccurs="unbounded" />
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="attachments">
+                <xs:annotation>
+                    <xs:documentation>Описание файлов вложений</xs:documentation>
+                </xs:annotation>
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="file"
+                                    type="ns0:file"
+                                    minOccurs="0"
+                                    maxOccurs="unbounded" />
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="harvestingWoodRow">
+        <xs:sequence>
+            <xs:element name="location"
+                        type="ns0:location">
+                <xs:annotation>
+                    <xs:documentation>В поле taxationUnit может присутствовать только одно значение (без перечисления через запятую или тире</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="area"
+                        type="ns1:area">
+                <xs:annotation>
+                    <xs:documentation>Площадь эксплуатационная</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="formCutting"
+                        type="ns1:formCutting"
+                        minOccurs="0">
+                <xs:annotation>
+                    <xs:documentation>Форма рубки</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="typeCutting"
+                        type="ns0:reference"
+                        minOccurs="0">
+                <xs:annotation>
+                    <xs:documentation>Указывается элемент справочника "Виды рубок"</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="farm"
+                        type="ns1:farm"
+                        minOccurs="0" />
+            <xs:element name="tree"
+                        type="ns0:reference"
+                        minOccurs="0">
+                <xs:annotation>
+                    <xs:documentation>Породный состав (Указывается элемент справочника "Породы древесины")</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="unitType"
+                        type="ns0:reference">
+                <xs:annotation>
+                    <xs:documentation>Единица измерения</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="volume"
+                        type="ns1:valueCutting">
+                <xs:annotation>
+                    <xs:documentation>Объем</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="harvestingObjectRow">
+        <xs:sequence>
+            <xs:element name="object"
+                        type="ns0:reference">
+                <xs:annotation>
+                    <xs:documentation>Наименование объекта лесной инфраструктуры</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="objectNumber"
+                        type="ns1:objectNumber"
+                        minOccurs="0">
+                <xs:annotation>
+                    <xs:documentation>Номер объекта лесной инфраструктуры</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element xmlns:q8="forestUsageReport"
+                        name="measure"
+                        type="ns0:reference">
+                <xs:annotation>
+                    <xs:documentation>Объект мероприятия</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="location"
+                        type="ns0:location">
+                <xs:annotation>
+                    <xs:documentation>Местоположение</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="area"
+                        type="ns1:area">
+                <xs:annotation>
+                    <xs:documentation>Площадь объекта, га</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element xmlns:q1="http://rosleshoz.gov.ru/xmlns/forestDeclaration"
+                        name="cutting"
+                        type="q1:cutting"
+                        minOccurs="0">
+                <xs:annotation>
+                    <xs:documentation>Площадь рубки, га</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="otherUsageTypesRow">
+        <xs:sequence>
+            <xs:element name="location"
+                        type="ns0:location" />
+            <xs:element name="area"
+                        type="ns1:area"
+                        minOccurs="0">
+                <xs:annotation>
+                    <xs:documentation>Площадь эксплуатационная</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="resource"
+                        type="ns0:reference"
+                        minOccurs="0">
+                <xs:annotation>
+                    <xs:documentation>Вид заготовляемых ресурсов</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="unitType"
+                        type="ns0:reference"
+                        minOccurs="0">
+                <xs:annotation>
+                    <xs:documentation>Единица измерения</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="volume"
+                        type="ns1:forestUsageVolume"
+                        minOccurs="0">
+                <xs:annotation>
+                    <xs:documentation>Объем изъятия</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element xmlns:q2="http://rosleshoz.gov.ru/xmlns/forestDeclaration"
+                        name="cutting"
+                        type="q2:cutting"
+                        minOccurs="0">
+                <xs:annotation>
+                    <xs:documentation>Площадь рубки, га</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="otherUsageObjectsRow">
+        <xs:sequence>
+            <xs:element name="object"
+                        type="ns0:reference">
+                <xs:annotation>
+                    <xs:documentation>Наименование объекта не лесной инфраструктуры</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="objectNumber"
+                        type="ns1:objectNumber"
+                        minOccurs="0">
+                <xs:annotation>
+                    <xs:documentation>Номер объекта лесной инфраструктуры</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="measure"
+                        type="ns0:reference">
+                <xs:annotation>
+                    <xs:documentation>Объект мероприятия</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="location"
+                        type="ns0:location" />
+            <xs:element name="area"
+                        type="ns1:area">
+                <xs:annotation>
+                    <xs:documentation>Площадь объекта, га</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element xmlns:q3="http://rosleshoz.gov.ru/xmlns/forestDeclaration"
+                        name="cutting"
+                        type="q3:cutting"
+                        minOccurs="0">
+                <xs:annotation>
+                    <xs:documentation>Площадь рубки, га</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="cutting">
+        <xs:annotation>
+            <xs:documentation>Рубка лесных насаждений</xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+            <xs:element name="area"
+                        type="ns1:area">
+                <xs:annotation>
+                    <xs:documentation>Площадь рубки, га</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="formCutting"
+                        type="ns1:formCutting">
+                <xs:annotation>
+                    <xs:documentation>Форма рубки</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="typeCutting"
+                        type="ns0:reference">
+                <xs:annotation>
+                    <xs:documentation>Указывается элемент справочника "Виды рубок"</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="farm"
+                        type="ns1:farm" />
+            <xs:element name="tree"
+                        type="ns0:reference">
+                <xs:annotation>
+                    <xs:documentation>Породный состав (Указывается элемент справочника "Породы древесины")</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="volume"
+                        type="ns1:valueCutting">
+                <xs:annotation>
+                    <xs:documentation>Объем заготовки, куб.м.</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="schemeRow">
+        <xs:sequence>
+            <xs:element name="location"
+                        type="ns0:location"
+                        minOccurs="0" />
+            <xs:element name="scale"
+                        type="xs:string">
+                <xs:annotation>
+                    <xs:documentation>Масштаб</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="fileID"
+                        type="xs:string">
+                <xs:annotation>
+                    <xs:documentation>Идентификатор вложения изображения схемы расположения лесосек или объектов инфраструктуры</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="locationInformationRow">
+        <xs:sequence>
+            <xs:element name="location"
+                        type="ns0:location"
+                        minOccurs="0" />
+            <xs:element name="objectNumber"
+                        type="xs:string">
+                <xs:annotation>
+                    <xs:documentation>Номер лесосеки (объекта)</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="overallArea"
+                        type="ns1:area">
+                <xs:annotation>
+                    <xs:documentation>Общая площадь, га</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="usageArea"
+                        type="ns1:area"
+                        minOccurs="0">
+                <xs:annotation>
+                    <xs:documentation>Площадь эксплуатационная</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="binding"
+                        minOccurs="0">
+                <xs:annotation>
+                    <xs:documentation>Привязка лесосеки (объекта)</xs:documentation>
+                </xs:annotation>
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element xmlns:q6="http://rosleshoz.gov.ru/xmlns/forestDeclaration"
+                                    name="row"
+                                    type="q6:explicationRow"
+                                    minOccurs="0"
+                                    maxOccurs="unbounded" />
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="explication"
+                        minOccurs="0">
+                <xs:annotation>
+                    <xs:documentation>Экспликация лесосеки (объекта)</xs:documentation>
+                </xs:annotation>
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element xmlns:q6="http://rosleshoz.gov.ru/xmlns/forestDeclaration"
+                                    name="row"
+                                    type="q6:explicationRow"
+                                    minOccurs="0"
+                                    maxOccurs="unbounded" />
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="explicationRow">
+        <xs:sequence>
+            <xs:element name="objectNumber"
+                        type="xs:string">
+                <xs:annotation>
+                    <xs:documentation>Номер лесосеки (объекта)</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="numberBegin"
+                        type="xs:string">
+                <xs:annotation>
+                    <xs:documentation>Номер начальной точки</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="numberEnd"
+                        type="xs:string">
+                <xs:annotation>
+                    <xs:documentation>Номер конечной точки</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="lineDirection"
+                        type="xs:string"
+                        minOccurs="0">
+                <xs:annotation>
+                    <xs:documentation>Направление линий,румбы (азимуты), град.</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="lineLength"
+                        minOccurs="0">
+                <xs:annotation>
+                    <xs:documentation>Длина линий,м</xs:documentation>
+                </xs:annotation>
+                <xs:simpleType>
+                    <xs:restriction base="xs:decimal">
+                        <xs:minInclusive value="0.00" />
+                        <xs:fractionDigits value="2" />
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:element>
+            <xs:element name="longitude"
+                        type="xs:float"
+                        minOccurs="0">
+                <xs:annotation>
+                    <xs:documentation>Долгота</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="latitude"
+                        type="xs:float"
+                        minOccurs="0">
+                <xs:annotation>
+                    <xs:documentation>Широта</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="usageTypeRow">
+        <xs:sequence>
+            <xs:element name="usageType"
+                        type="ns0:reference" />
+        </xs:sequence>
+    </xs:complexType>
+</xs:schema>
