@@ -421,7 +421,7 @@
         </xs:annotation>
         <xs:sequence>
             <xs:element name="area"
-                        type="ns1:area">
+                        type="ns1:areaCutting">
                 <xs:annotation>
                     <xs:documentation>Площадь рубки, га</xs:documentation>
                 </xs:annotation>
