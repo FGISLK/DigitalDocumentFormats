@@ -89,6 +89,17 @@
             <xs:documentation>Площадь</xs:documentation>
         </xs:annotation>
         <xs:restriction base="xs:decimal">
+            <xs:minInclusive value="0.000000" />
+            <xs:fractionDigits value="6" />
+            <xs:totalDigits value="17" />
+            <xs:maxInclusive value="9999999999.999999" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="areaCutting">
+        <xs:annotation>
+            <xs:documentation>Площадь заготовки</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:decimal">
             <xs:minInclusive value="0.0000" />
             <xs:fractionDigits value="4" />
             <xs:totalDigits value="15" />
