@@ -7,6 +7,8 @@
 * [forestFireSecurity](https://github.com/FGISLK/DigitalDocumentFormats/tree/main/forestFireSecurity) - отчет об охране лесов от пожаров;
 * [forestProtection](https://github.com/FGISLK/DigitalDocumentFormats/tree/main/forestProtection) - отчет о защите лесов;
 * [forestPlotDesignDocumentation](https://github.com/FGISLK/DigitalDocumentFormats/tree/main/forestPlotDesignDocumentation) - проектная документация лесного участка (ПДЛУ);
+* [forestReforestation](https://github.com/FGISLK/DigitalDocumentFormats/tree/main/forestReforestation) - проект лесовосстановления;
+
 
 ## Прочие форматы
 * [сommonTypes](https://github.com/FGISLK/DigitalDocumentFormats/tree/main/commonTypes) - общие типы для всех форматов;
