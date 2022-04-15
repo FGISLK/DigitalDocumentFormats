@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" ?>
+﻿<?xml version="1.0" encoding="utf-8" ?>
 <!--Created with Liquid XML 2013 Designer Edition 11.1.0.4725 (http://www.liquid-technologies.com)-->
 <xs:schema xmlns:ns0="http://rosleshoz.gov.ru/xmlns/sTypes/4.1"
            elementFormDefault="qualified"
@@ -509,6 +509,7 @@
                         <xs:enumeration value="forestProtection" />
                         <xs:enumeration value="forestReproduction" />
                         <xs:enumeration value="forestPathologyReport" />
+                        <xs:enumeration value="forestReforestation" />
                     </xs:restriction>
                 </xs:simpleType>
             </xs:element>
