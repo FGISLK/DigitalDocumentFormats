@@ -1,0 +1,440 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<!--Created with Liquid XML 2013 Designer Edition 11.1.0.4725 (http://www.liquid-technologies.com)-->
+<xs:schema xmlns:ns0="http://rosleshoz.gov.ru/xmlns/cTypes/4.1"
+           xmlns:ns1="http://rosleshoz.gov.ru/xmlns/sTypes/4.1"
+           elementFormDefault="qualified"
+           targetNamespace="http://rosleshoz.gov.ru/xmlns/forestReforestation/4.1"
+           version="4.1"
+           xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:import schemaLocation="..\..\commonTypes\cTypes\4.1\cTypes.xsd"
+               namespace="http://rosleshoz.gov.ru/xmlns/cTypes/4.1" />
+    <xs:import schemaLocation="..\..\commonTypes\sTypes\4.1\sTypes.xsd"
+               namespace="http://rosleshoz.gov.ru/xmlns/sTypes/4.1" />
+    <xs:element xmlns:q1="http://rosleshoz.gov.ru/xmlns/forestReforestation/4.1"
+                name="forestReforestation"
+                type="q1:forestReforestation" />
+    <xs:complexType name="forestReforestation">
+        <xs:annotation>
+            <xs:documentation>Описание проекта лесовосстановления</xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+            <xs:element name="serviceInfo"
+                        type="ns0:serviceInfo" />
+            <xs:element name="number"
+                        default="б/н">
+                <xs:annotation>
+                    <xs:documentation>Номер проекта</xs:documentation>
+                </xs:annotation>
+                <xs:simpleType>
+                    <xs:restriction base="xs:string">
+                        <xs:minLength value="1" />
+                        <xs:maxLength value="25" />
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:element>
+            <xs:element name="date"
+                        type="xs:date"
+                        default="2016-07-15">
+                <xs:annotation>
+                    <xs:documentation>Дата проекта</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="header">
+                <xs:annotation>
+                    <xs:documentation>Общие сведения о документе</xs:documentation>
+                </xs:annotation>
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="typeReforestation">
+                            <xs:annotation>
+                                <xs:documentation>Вид лесовосстановления</xs:documentation>
+                            </xs:annotation>
+                            <xs:simpleType>
+                                <xs:restriction base="xs:string">
+                                    <xs:enumeration value="естественное" />
+                                    <xs:enumeration value="искусственное" />
+                                    <xs:enumeration value="комбинированное" />
+                                </xs:restriction>
+                            </xs:simpleType>
+                        </xs:element>
+                        <xs:element name="subject"
+                                    type="ns0:reference">
+                            <xs:annotation>
+                                <xs:documentation>Субъект РФ</xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                        <xs:element name="forestArea"
+                                    type="ns0:reference">
+                            <xs:annotation>
+                                <xs:documentation>Лесной район</xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                        <xs:element name="performer"
+                                    type="ns0:signerData">
+                            <xs:annotation>
+                                <xs:documentation>Исполнитель работ по лесовосстановлению</xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="conditionsLocationForestArea">
+                <xs:annotation>
+                    <xs:documentation>Характеристика местоположения лесного участка</xs:documentation>
+                </xs:annotation>
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="location"
+                                    type="ns0:location">
+                            <xs:annotation>
+                                <xs:documentation>Местоположение лесного участка, га</xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                        <xs:element name="area"
+                                    type="ns1:area">
+                            <xs:annotation>
+                                <xs:documentation>Площадь лесного участка, га</xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="conditionsForestArea">
+                <xs:annotation>
+                    <xs:documentation>Характеристика лесорастительных условий лесного участка</xs:documentation>
+                </xs:annotation>
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="relief"
+                                    type="xs:string">
+                            <xs:annotation>
+                                <xs:documentation>Рельеф участка (уклон)</xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                        <xs:element name="hydrology"
+                                    type="xs:string">
+                            <xs:annotation>
+                                <xs:documentation>Гидрологические условия (увлажнение)</xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                        <xs:element name="soil"
+                                    type="xs:string">
+                            <xs:annotation>
+                                <xs:documentation>Почва</xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="conditionsAreasForestArea"
+                        type="xs:string">
+                <xs:annotation>
+                    <xs:documentation>Характеристика площадей лесного участка</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="conditionsCutting"
+                        minOccurs="0">
+                <xs:annotation>
+                    <xs:documentation>Характеристика вырубки</xs:documentation>
+                </xs:annotation>
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="numberStumps"
+                                    type="xs:float">
+                            <xs:annotation>
+                                <xs:documentation>Количество пней, тыс. штук/га</xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                        <xs:element name="treePlacement">
+                            <xs:annotation>
+                                <xs:documentation>Характер и размещение оставленных деревьев</xs:documentation>
+                            </xs:annotation>
+                            <xs:simpleType>
+                                <xs:restriction base="xs:string">
+                                    <xs:enumeration value="куртины" />
+                                    <xs:enumeration value="полосы" />
+                                    <xs:enumeration value="групповое" />
+                                    <xs:enumeration value="равномерное" />
+                                </xs:restriction>
+                            </xs:simpleType>
+                        </xs:element>
+                        <xs:element name="degreeSodding">
+                            <xs:annotation>
+                                <xs:documentation>Степень задернения</xs:documentation>
+                            </xs:annotation>
+                            <xs:simpleType>
+                                <xs:restriction base="xs:string">
+                                    <xs:enumeration value="слабая" />
+                                    <xs:enumeration value="средняя" />
+                                    <xs:enumeration value="сильная" />
+                                </xs:restriction>
+                            </xs:simpleType>
+                        </xs:element>
+                        <xs:element name="degreeMineralization"
+                                    type="ns1:percent">
+                            <xs:annotation>
+                                <xs:documentation>Степень минерализации почвы (% от площади лесного участка)</xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                        <xs:element name="degreeCleaning">
+                            <xs:annotation>
+                                <xs:documentation>Степень очистки (захламленность, м.куб)</xs:documentation>
+                            </xs:annotation>
+                            <xs:simpleType>
+                                <xs:restriction base="xs:string">
+                                    <xs:enumeration value="отстутствует (до 5 м.куб/га)" />
+                                    <xs:enumeration value="слабая (5 - 20 м.куб/га)" />
+                                    <xs:enumeration value="средняя (20 - 50 м.куб/га)" />
+                                    <xs:enumeration value="сильная (более 50 м.куб/га)" />
+                                </xs:restriction>
+                            </xs:simpleType>
+                        </xs:element>
+                        <xs:element name="availabilityCategory">
+                            <xs:annotation>
+                                <xs:documentation>Категория доступности для техники</xs:documentation>
+                            </xs:annotation>
+                            <xs:simpleType>
+                                <xs:restriction base="xs:string">
+                                    <xs:enumeration value="доступная" />
+                                    <xs:enumeration value="требуется узкополосная расчистка без корчевки пней" />
+                                    <xs:enumeration value="требуется узкополосная расчистка" />
+                                    <xs:enumeration value="требуется широкополосная расчистка с корчевкой пней" />
+                                </xs:restriction>
+                            </xs:simpleType>
+                        </xs:element>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="conditionsUndergrowth"
+                        minOccurs="0">
+                <xs:annotation>
+                    <xs:documentation>Характеристика имеющихся подроста и молодняка</xs:documentation>
+                </xs:annotation>
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="treeComposition"
+                                    type="xs:string">
+                            <xs:annotation>
+                                <xs:documentation>Состав пород</xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                        <xs:element name="averageAge"
+                                    type="xs:integer">
+                            <xs:annotation>
+                                <xs:documentation>Средний возраст, лет</xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                        <xs:element name="averageHeight"
+                                    type="xs:integer">
+                            <xs:annotation>
+                                <xs:documentation>Средняя высота, м</xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                        <xs:element name="numberTrees"
+                                    type="xs:float">
+                            <xs:annotation>
+                                <xs:documentation>Количество деревьев и кустарников, тыс. штук/га</xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                        <xs:element name="placement">
+                            <xs:annotation>
+                                <xs:documentation>Размещение по площади лесного участка</xs:documentation>
+                            </xs:annotation>
+                            <xs:simpleType>
+                                <xs:restriction base="xs:string">
+                                    <xs:enumeration value="равномерное" />
+                                    <xs:enumeration value="неравномерное" />
+                                    <xs:enumeration value="групповое" />
+                                </xs:restriction>
+                            </xs:simpleType>
+                        </xs:element>
+                        <xs:element name="standCondition"
+                                    type="xs:string">
+                            <xs:annotation>
+                                <xs:documentation>Состояние лесных насаждений и их оценка</xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="conditionsProjectedMethod">
+                <xs:annotation>
+                    <xs:documentation>Проектируемый способ лесовосстановления</xs:documentation>
+                </xs:annotation>
+                <xs:simpleType>
+                    <xs:restriction base="xs:string">
+                        <xs:enumeration value="естественное лесовосстановление" />
+                        <xs:enumeration value="искусственное лесовосстановление" />
+                        <xs:enumeration value="комбинированное лесовосстановление (посев, посадка)" />
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:element>
+            <xs:element name="grounding"
+                        type="xs:string">
+                <xs:annotation>
+                    <xs:documentation>Обоснование проектируемого способа лесовосстановления</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="timingTechnologiesReforestation"
+                        type="xs:string">
+                <xs:annotation>
+                    <xs:documentation>Сроки и технологии лесовосстановления</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="timingTechnologiesAgrotechnicalCare"
+                        type="xs:string">
+                <xs:annotation>
+                    <xs:documentation>Сроки и технологии по агротехническим уходам</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="timingTechnologiesSilviculturalCare"
+                        type="xs:string">
+                <xs:annotation>
+                    <xs:documentation>Сроки и технологии по лесоводственным уходам</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="plantingMaterialRequirements">
+                <xs:annotation>
+                    <xs:documentation>Требования к посадочному (посевному) материалу</xs:documentation>
+                </xs:annotation>
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="tree"
+                                    type="xs:string">
+                            <xs:annotation>
+                                <xs:documentation>Порода</xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                        <xs:element name="type"
+                                    type="xs:string">
+                            <xs:annotation>
+                                <xs:documentation>Вид посадочного материала</xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                        <xs:element name="age"
+                                    type="xs:integer"
+                                    minOccurs="0">
+                            <xs:annotation>
+                                <xs:documentation>Возраст, лет</xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                        <xs:element name="height"
+                                    type="xs:integer"
+                                    minOccurs="0">
+                            <xs:annotation>
+                                <xs:documentation>Высота, см</xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                        <xs:element name="diameter"
+                                    type="xs:integer"
+                                    minOccurs="0">
+                            <xs:annotation>
+                                <xs:documentation>Диаметр корневой шейки, мм</xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                        <xs:element name="seedQualityClass"
+                                    type="xs:string"
+                                    minOccurs="0">
+                            <xs:annotation>
+                                <xs:documentation>Класс качества семян</xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                        <xs:element name="selectionCategory"
+                                    type="xs:string"
+                                    minOccurs="0">
+                            <xs:annotation>
+                                <xs:documentation>Селекционная категория</xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                        <xs:element name="locationOrigin"
+                                    type="xs:string"
+                                    minOccurs="0">
+                            <xs:annotation>
+                                <xs:documentation>Место происхождения</xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="youngGrowthRequirements">
+                <xs:annotation>
+                    <xs:documentation>Требования к молоднякам</xs:documentation>
+                </xs:annotation>
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="tree"
+                                    type="xs:string">
+                            <xs:annotation>
+                                <xs:documentation>Порода</xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                        <xs:element name="age"
+                                    type="xs:integer">
+                            <xs:annotation>
+                                <xs:documentation>Возраст, лет</xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                        <xs:element name="numberTrees"
+                                    type="xs:float">
+                            <xs:annotation>
+                                <xs:documentation>Количество деревьев основных лесных пород, тыс. штук/га</xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                        <xs:element name="averageHeight"
+                                    type="xs:integer">
+                            <xs:annotation>
+                                <xs:documentation>Средняя высота, м</xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="reforestationArea"
+                        type="ns1:area">
+                <xs:annotation>
+                    <xs:documentation>Объем работ по лесовосстановлению (площадь), га</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="projectedScopeWork">
+                <xs:annotation>
+                    <xs:documentation>Проектируемый объем работ</xs:documentation>
+                </xs:annotation>
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="area"
+                                    type="ns1:area">
+                            <xs:annotation>
+                                <xs:documentation>Площадь лесовосстановления, га</xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                        <xs:element name="numberTrees"
+                                    type="xs:float">
+                            <xs:annotation>
+                                <xs:documentation>Количество жизнеспособных деревьев основных лесных пород, тыс. штук/га</xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                        <xs:element name="totalNumberTrees"
+                                    type="xs:float">
+                            <xs:annotation>
+                                <xs:documentation>Количество жизнеспособных деревьев основных лесных пород на всей площади лесного участка, тыс. штук</xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="attachments">
+                <xs:annotation>
+                    <xs:documentation>Описание файлов вложений - материалы обследования, планы и прочее</xs:documentation>
+                </xs:annotation>
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="file"
+                                    type="ns0:file"
+                                    minOccurs="0"
+                                    maxOccurs="unbounded" />
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+        </xs:sequence>
+    </xs:complexType>
+</xs:schema>
