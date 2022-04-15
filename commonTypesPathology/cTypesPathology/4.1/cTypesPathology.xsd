@@ -1,0 +1,211 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<!--Created with Liquid XML 2013 Designer Edition 11.1.0.4725 (http://www.liquid-technologies.com)-->
+<xs:schema xmlns:ns0="http://rosleshoz.gov.ru/xmlns/sTypes/4.1"
+           elementFormDefault="qualified"
+           targetNamespace="http://rosleshoz.gov.ru/xmlns/cTypesPathology/4.1"
+           version="4.1"
+           xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:import schemaLocation="..\..\..\commonTypes\cTypes\4.1\cTypes.xsd"
+               namespace="http://rosleshoz.gov.ru/xmlns/cTypes/4.1" />
+    <xs:import schemaLocation="..\..\..\commonTypes\sTypes\4.1\sTypes.xsd"
+               namespace="http://rosleshoz.gov.ru/xmlns/sTypes/4.1" />
+    <xs:complexType name="mainLocation">
+        <xs:annotation>
+            <xs:documentation>Описание основного местоположения</xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+            <xs:element xmlns:q1="http://rosleshoz.gov.ru/xmlns/cTypes/4.1"
+                        name="subject"
+                        type="q1:reference"
+                        minOccurs="0">
+                <xs:annotation>
+                    <xs:documentation>Субъект Российской Федерации</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element xmlns:q2="http://rosleshoz.gov.ru/xmlns/cTypes/4.1"
+                        name="forestry"
+                        type="q2:reference"
+                        minOccurs="0">
+                <xs:annotation>
+                    <xs:documentation>Лесничество</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element xmlns:q20="http://rosleshoz.gov.ru/xmlns/cTypes/4.1"
+                        name="subforestry"
+                        type="q20:reference"
+                        minOccurs="0">
+                <xs:annotation>
+                    <xs:documentation>Наименование участкового лесничества - элемент справочника "Участковые лесничества"</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element xmlns:q21="http://rosleshoz.gov.ru/xmlns/cTypes/4.1"
+                        name="tract"
+                        type="q21:reference"
+                        minOccurs="0">
+                <xs:annotation>
+                    <xs:documentation>Наименование урочища (при наличии) - элемент справочника "Урочища"</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="pathologyLocation">
+        <xs:annotation>
+            <xs:documentation>Местоположение для лесопатологии</xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+            <xs:element xmlns:q20="http://rosleshoz.gov.ru/xmlns/cTypes/4.1"
+                        name="subforestry"
+                        type="q20:reference"
+                        minOccurs="0">
+                <xs:annotation>
+                    <xs:documentation>Наименование участкового лесничества - элемент справочника "Участковые лесничества"</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element xmlns:q21="http://rosleshoz.gov.ru/xmlns/cTypes/4.1"
+                        name="tract"
+                        type="q21:reference"
+                        minOccurs="0">
+                <xs:annotation>
+                    <xs:documentation>Наименование урочища (при наличии) - элемент справочника "Урочища"</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="quarter"
+                        type="ns0:quarter"
+                        minOccurs="0">
+                <xs:annotation>
+                    <xs:documentation>N Лесного квартала</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="taxationUnit"
+                        type="ns0:taxationUnit"
+                        minOccurs="0">
+                <xs:annotation>
+                    <xs:documentation>N Лесного выдела</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="pathologyUnit"
+                        type="ns0:taxationUnit"
+                        minOccurs="0">
+                <xs:annotation>
+                    <xs:documentation>N Лесопатологического выдела</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="distribution">
+        <xs:annotation>
+            <xs:documentation>Распределение деревьев</xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+            <xs:element name="notToFelling"
+                        type="ns0:percent"
+                        minOccurs="0"
+                        default="0">
+                <xs:annotation>
+                    <xs:documentation>Не подлежат рубке</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="toFelling"
+                        type="ns0:percent"
+                        minOccurs="0"
+                        default="0">
+                <xs:annotation>
+                    <xs:documentation>Подлежат рубке</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="pestOccupationNumber">
+        <xs:annotation>
+            <xs:documentation>Степень заселенности, шт</xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+            <xs:element name="notPopulated"
+                        type="xs:integer"
+                        minOccurs="0"
+                        default="0">
+                <xs:annotation>
+                    <xs:documentation>Н - не заселено (не поражено, не повреждено)</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="populated"
+                        type="xs:integer"
+                        minOccurs="0"
+                        default="0">
+                <xs:annotation>
+                    <xs:documentation>З - заселено стволовыми вредителями (поражено болезнями, повреждено огнем)</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="processed"
+                        type="xs:integer"
+                        minOccurs="0"
+                        default="0">
+                <xs:annotation>
+                    <xs:documentation>О - отработано вредителями</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="pestOccupationValue">
+        <xs:annotation>
+            <xs:documentation>Степень заселенности, куб. м</xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+            <xs:element name="notPopulated"
+                        type="ns0:valueCutting"
+                        minOccurs="0"
+                        default="0">
+                <xs:annotation>
+                    <xs:documentation>Н - не заселено (не поражено, не повреждено)</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="populated"
+                        type="ns0:valueCutting"
+                        minOccurs="0"
+                        default="0">
+                <xs:annotation>
+                    <xs:documentation>З - заселено стволовыми вредителями (поражено болезнями, повреждено огнем)</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="processed"
+                        type="ns0:valueCutting"
+                        minOccurs="0"
+                        default="0">
+                <xs:annotation>
+                    <xs:documentation>О - отработано вредителями</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="pestOccupationPercent">
+        <xs:annotation>
+            <xs:documentation>Степень заселенности, %</xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+            <xs:element name="notPopulated"
+                        type="ns0:percent"
+                        minOccurs="0"
+                        default="0">
+                <xs:annotation>
+                    <xs:documentation>Н - не заселено (не поражено, не повреждено)</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="populated"
+                        type="ns0:percent"
+                        minOccurs="0"
+                        default="0">
+                <xs:annotation>
+                    <xs:documentation>З - заселено стволовыми вредителями (поражено болезнями, повреждено огнем)</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="processed"
+                        type="ns0:percent"
+                        minOccurs="0"
+                        default="0">
+                <xs:annotation>
+                    <xs:documentation>О - отработано вредителями</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+        </xs:sequence>
+    </xs:complexType>
+</xs:schema>
