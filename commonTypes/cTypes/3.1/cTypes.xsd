@@ -1,0 +1,623 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<!--Created with Liquid XML 2013 Designer Edition 11.1.0.4725 (http://www.liquid-technologies.com)-->
+<xs:schema xmlns:ns0="http://rosleshoz.gov.ru/xmlns/sTypes"
+           elementFormDefault="qualified"
+           targetNamespace="http://rosleshoz.gov.ru/xmlns/cTypes/3.1"
+           version="3.1"
+           xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:import schemaLocation="..\..\sTypes\3.1\sTypes.xsd"
+               namespace="http://rosleshoz.gov.ru/xmlns/sTypes/3.1" />
+    <xs:complexType name="reference">
+        <xs:annotation>
+            <xs:documentation>Ссылка на справочник (НСИ)</xs:documentation>
+        </xs:annotation>
+        <xs:attribute name="id"
+                      type="xs:string"
+                      use="optional" />
+        <xs:attribute name="name"
+                      type="xs:string"
+                      use="required" />
+        <xs:attribute name="description"
+                      type="xs:string"
+                      use="optional">
+            <xs:annotation>
+                <xs:documentation>Описание элемента (заполняется опционально)</xs:documentation>
+            </xs:annotation>
+        </xs:attribute>
+    </xs:complexType>
+    <xs:complexType name="partner">
+        <xs:annotation>
+            <xs:documentation>Наименование организации</xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+            <xs:choice>
+                <xs:element xmlns:q16="http://rosleshoz.gov.ru/xmlns/cTypes/3.1"
+                            name="juridicalPerson"
+                            type="q16:juridicalPerson">
+                    <xs:annotation>
+                        <xs:documentation>Юр.лицо</xs:documentation>
+                    </xs:annotation>
+                </xs:element>
+                <xs:element xmlns:q17="http://rosleshoz.gov.ru/xmlns/cTypes/3.1"
+                            name="physicalPerson"
+                            type="q17:physicalPerson">
+                    <xs:annotation>
+                        <xs:documentation>Физ. лицо</xs:documentation>
+                    </xs:annotation>
+                </xs:element>
+                <xs:element xmlns:q18="http://rosleshoz.gov.ru/xmlns/cTypes/3.1"
+                            name="individualEntrepreneur"
+                            type="q18:individualEntrepreneur">
+                    <xs:annotation>
+                        <xs:documentation>Индивидуальный предприниматель</xs:documentation>
+                    </xs:annotation>
+                </xs:element>
+            </xs:choice>
+            <xs:element name="phone"
+                        type="xs:string">
+                <xs:annotation>
+                    <xs:documentation>Номер контактного телефона</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="juridicalPerson">
+        <xs:annotation>
+            <xs:documentation>Сведения о лесопользователе</xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+            <xs:element name="name">
+                <xs:annotation>
+                    <xs:documentation>Наименование юридического лица (включая организационно-правовую форму)</xs:documentation>
+                </xs:annotation>
+                <xs:simpleType>
+                    <xs:restriction base="xs:string">
+                        <xs:minLength value="1" />
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:element>
+            <xs:element name="inn"
+                        default="0256017902">
+                <xs:annotation>
+                    <xs:documentation>ИНН</xs:documentation>
+                </xs:annotation>
+                <xs:simpleType>
+                    <xs:restriction base="xs:string">
+                        <xs:length value="10" />
+                        <xs:pattern value="([0-9]{1}[1-9]{1}|[1-9]{1}[0-9]{1})[0-9]{8}" />
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:element>
+            <xs:element name="ogrn"
+                        default="1060256009835"
+                        nillable="true">
+                <xs:annotation>
+                    <xs:documentation>Основной государственный регистрационный номер (13 или 15 цифр)</xs:documentation>
+                </xs:annotation>
+                <xs:simpleType>
+                    <xs:restriction base="xs:string">
+                        <xs:pattern value="(1|5|2|3|4)([0-9]{12}|[0-9]{14})" />
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:element>
+            <xs:element name="address"
+                        type="xs:string">
+                <xs:annotation>
+                    <xs:documentation>Местонахождение</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="physicalPerson">
+        <xs:annotation>
+            <xs:documentation>Сведения о лесопользователе</xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+            <xs:element name="first_name">
+                <xs:annotation>
+                    <xs:documentation>Имя</xs:documentation>
+                </xs:annotation>
+                <xs:simpleType>
+                    <xs:restriction base="xs:string">
+                        <xs:minLength value="1" />
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:element>
+            <xs:element name="last_name">
+                <xs:annotation>
+                    <xs:documentation>Фамилия</xs:documentation>
+                </xs:annotation>
+                <xs:simpleType>
+                    <xs:restriction base="xs:string">
+                        <xs:minLength value="1" />
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:element>
+            <xs:element name="patronimic_name"
+                        type="xs:string"
+                        minOccurs="0">
+                <xs:annotation>
+                    <xs:documentation>Отчество</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="identity_document">
+                <xs:annotation>
+                    <xs:documentation>Документ, удостоверяющий личность</xs:documentation>
+                </xs:annotation>
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="name"
+                                    type="xs:string">
+                            <xs:annotation>
+                                <xs:documentation>Наименование</xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                        <xs:element name="series"
+                                    type="xs:string"
+                                    nillable="true">
+                            <xs:annotation>
+                                <xs:documentation>Серия</xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                        <xs:element name="number"
+                                    type="xs:string">
+                            <xs:annotation>
+                                <xs:documentation>Номер</xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="inn"
+                        default="526317984689"
+                        nillable="true">
+                <xs:annotation>
+                    <xs:documentation>ИНН физического лица (12 цифр)</xs:documentation>
+                </xs:annotation>
+                <xs:simpleType>
+                    <xs:restriction base="xs:string">
+                        <xs:length value="12" />
+                        <xs:pattern value="([0-9]{1}[1-9]{1}|[1-9]{1}[0-9]{1})[0-9]{10}" />
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:element>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="individualEntrepreneur">
+        <xs:annotation>
+            <xs:documentation>Сведения о лесопользователе</xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+            <xs:element name="first_name">
+                <xs:annotation>
+                    <xs:documentation>Имя</xs:documentation>
+                </xs:annotation>
+                <xs:simpleType>
+                    <xs:restriction base="xs:string">
+                        <xs:minLength value="1" />
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:element>
+            <xs:element name="last_name">
+                <xs:annotation>
+                    <xs:documentation>Фамилия</xs:documentation>
+                </xs:annotation>
+                <xs:simpleType>
+                    <xs:restriction base="xs:string">
+                        <xs:minLength value="1" />
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:element>
+            <xs:element name="patronimic_name"
+                        type="xs:string"
+                        minOccurs="0">
+                <xs:annotation>
+                    <xs:documentation>Отчество</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="identity_document">
+                <xs:annotation>
+                    <xs:documentation>Документ, удостоверяющий личность</xs:documentation>
+                </xs:annotation>
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="name"
+                                    type="xs:string">
+                            <xs:annotation>
+                                <xs:documentation>Наименование</xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                        <xs:element name="series"
+                                    type="xs:string"
+                                    nillable="true">
+                            <xs:annotation>
+                                <xs:documentation>Серия</xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                        <xs:element name="number"
+                                    type="xs:string">
+                            <xs:annotation>
+                                <xs:documentation>Номер</xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="ogrn"
+                        default="1060256009835"
+                        nillable="true">
+                <xs:annotation>
+                    <xs:documentation>Основной государственный регистрационный номер (13 или 15 цифр)</xs:documentation>
+                </xs:annotation>
+                <xs:simpleType>
+                    <xs:restriction base="xs:string">
+                        <xs:pattern value="(1|5|2|3|4)([0-9]{12}|[0-9]{14})" />
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:element>
+            <xs:element name="inn"
+                        default="526317984689"
+                        nillable="true">
+                <xs:annotation>
+                    <xs:documentation>ИНН физического лица (12 цифр)</xs:documentation>
+                </xs:annotation>
+                <xs:simpleType>
+                    <xs:restriction base="xs:string">
+                        <xs:length value="12" />
+                        <xs:pattern value="([0-9]{1}[1-9]{1}|[1-9]{1}[0-9]{1})[0-9]{10}" />
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:element>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="employee">
+        <xs:annotation>
+            <xs:documentation>Сотрудник</xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+            <xs:element name="first_name"
+                        type="xs:string">
+                <xs:annotation>
+                    <xs:documentation>Имя</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="last_name"
+                        type="xs:string">
+                <xs:annotation>
+                    <xs:documentation>Фамилия</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="patronimic_name"
+                        type="xs:string"
+                        minOccurs="0">
+                <xs:annotation>
+                    <xs:documentation>Отчество</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="post"
+                        type="xs:string"
+                        minOccurs="0">
+                <xs:annotation>
+                    <xs:documentation>Должность</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="basisAuthority"
+                        type="xs:string"
+                        minOccurs="0">
+                <xs:annotation>
+                    <xs:documentation>Основание для полномочий</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="phone"
+                        type="xs:string"
+                        minOccurs="0">
+                <xs:annotation>
+                    <xs:documentation>Телефон</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="signerData">
+        <xs:annotation>
+            <xs:documentation>Данные подписи</xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+            <xs:element xmlns:q1="http://rosleshoz.gov.ru/xmlns/cTypes/3.1"
+                        name="employee"
+                        type="q1:employee">
+                <xs:annotation>
+                    <xs:documentation>Данные сотрудника</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="date"
+                        type="xs:date"
+                        minOccurs="0"
+                        default="2016-07-15">
+                <xs:annotation>
+                    <xs:documentation>Дата составления/подписания документа</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="organization"
+                        type="xs:string"
+                        minOccurs="0">
+                <xs:annotation>
+                    <xs:documentation>Организация</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="contract">
+        <xs:annotation>
+            <xs:documentation>Информация о договоре аренды лесного участка или ином документе</xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+            <xs:element xmlns:q2="http://rosleshoz.gov.ru/xmlns/sTypes/3.1"
+                        name="type"
+                        type="q2:contractType">
+                <xs:annotation>
+                    <xs:documentation>Вид документа</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="number"
+                        default="б/н">
+                <xs:annotation>
+                    <xs:documentation>Номер договора аренды лесного участка или иного документа</xs:documentation>
+                </xs:annotation>
+                <xs:simpleType>
+                    <xs:restriction base="xs:string">
+                        <xs:minLength value="1" />
+                        <xs:maxLength value="25" />
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:element>
+            <xs:element name="date"
+                        type="xs:date"
+                        default="2016-07-15">
+                <xs:annotation>
+                    <xs:documentation>Дата договора аренды лесного участка или иного документа</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:sequence>
+                <xs:element xmlns:q1="http://rosleshoz.gov.ru/xmlns/cTypes/3.1"
+                            name="usageType"
+                            type="q1:reference"
+                            minOccurs="0"
+                            maxOccurs="unbounded">
+                    <xs:annotation>
+                        <xs:documentation>Вид использования лесов</xs:documentation>
+                    </xs:annotation>
+                </xs:element>
+            </xs:sequence>
+            <xs:element name="registrationNumber"
+                        type="xs:string"
+                        minOccurs="0"
+                        maxOccurs="1">
+                <xs:annotation>
+                    <xs:documentation>Номер государственной регистрации</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="approvingProject"
+                        type="xs:string"
+                        minOccurs="0">
+                <xs:annotation>
+                    <xs:documentation>Организация, утвердившая проект освоения лесов</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="approvingDate"
+                        type="xs:date"
+                        minOccurs="0">
+                <xs:annotation>
+                    <xs:documentation>Организация, утвердившая проект освоения лесов</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="location">
+        <xs:annotation>
+            <xs:documentation>Местоположение</xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+            <xs:element xmlns:q19="http://rosleshoz.gov.ru/xmlns/cTypes"
+                        xmlns:q2="http://rosleshoz.gov.ru/xmlns/cTypes/3.1"
+                        name="forestry"
+                        type="q2:reference">
+                <xs:annotation>
+                    <xs:documentation>Наименование лесничества (лесопарка) - элемент справочника "Лесничества"</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element xmlns:q3="http://rosleshoz.gov.ru/xmlns/cTypes/3.1"
+                        xmlns:q20="http://rosleshoz.gov.ru/xmlns/cTypes"
+                        name="subforestry"
+                        type="q3:reference">
+                <xs:annotation>
+                    <xs:documentation>Наименование участкового лесничества - элемент справочника "Участковые лесничества"</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element xmlns:q21="http://rosleshoz.gov.ru/xmlns/cTypes"
+                        xmlns:q4="http://rosleshoz.gov.ru/xmlns/cTypes/3.1"
+                        name="tract"
+                        type="q4:reference"
+                        minOccurs="0">
+                <xs:annotation>
+                    <xs:documentation>Наименование урочища (при наличии) - элемент справочника "Урочища"</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element xmlns:q5="http://rosleshoz.gov.ru/xmlns/sTypes/3.1"
+                        name="quarter"
+                        type="q5:quarter"
+                        default="1">
+                <xs:annotation>
+                    <xs:documentation>N Лесного квартала</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element xmlns:q6="http://rosleshoz.gov.ru/xmlns/sTypes/3.1"
+                        name="taxationUnit"
+                        type="q6:taxationUnit"
+                        default="1" />
+            <xs:element xmlns:q7="http://rosleshoz.gov.ru/xmlns/sTypes/3.1"
+                        name="cuttingArea"
+                        type="q7:cuttingArea"
+                        minOccurs="0">
+                <xs:annotation>
+                    <xs:documentation>Номер лесосеки</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="file">
+        <xs:sequence>
+            <xs:element name="id"
+                        type="xs:string">
+                <xs:annotation>
+                    <xs:documentation>Уникальный идентификатор файла в архиве, может быть:
+ - guid;
+ - набор символов уникальный внутри всего xml-документа;
+ - любой hash файла, например md5.</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="name"
+                        type="xs:string">
+                <xs:annotation>
+                    <xs:documentation>Оригинальное наименование файла (имя.расширение)</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="extension"
+                        type="xs:string">
+                <xs:annotation>
+                    <xs:documentation>Расширение оригинального файла</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="signature"
+                        type="xs:base64Binary"
+                        minOccurs="0">
+                <xs:annotation>
+                    <xs:documentation>ЭЦП в формате PKCS#7 detached.</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="date">
+        <xs:annotation>
+            <xs:documentation>Описание периода (даты)</xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+            <xs:element name="month"
+                        default="9">
+                <xs:annotation>
+                    <xs:documentation>Месяц</xs:documentation>
+                </xs:annotation>
+                <xs:simpleType>
+                    <xs:restriction base="xs:integer">
+                        <xs:minInclusive value="1" />
+                        <xs:maxInclusive value="12" />
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:element>
+            <xs:element name="year"
+                        default="2016">
+                <xs:annotation>
+                    <xs:documentation>Год</xs:documentation>
+                </xs:annotation>
+                <xs:simpleType>
+                    <xs:restriction base="xs:integer">
+                        <xs:minInclusive value="2016" />
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:element>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="period">
+        <xs:annotation>
+            <xs:documentation>Описание периода (начальная и конечная дата)</xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+            <xs:element name="begin"
+                        type="xs:date">
+                <xs:annotation>
+                    <xs:documentation>Начальная дата</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="end"
+                        type="xs:date">
+                <xs:annotation>
+                    <xs:documentation>Конечная дата</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="coordinates">
+        <xs:annotation>
+            <xs:documentation>Координаты</xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+            <xs:element name="latitude"
+                        type="xs:decimal"
+                        minOccurs="0"
+                        default="0">
+                <xs:annotation>
+                    <xs:documentation>Широта</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="longitude"
+                        type="xs:decimal"
+                        minOccurs="0"
+                        default="0">
+                <xs:annotation>
+                    <xs:documentation>Долгота</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="attachments">
+        <xs:sequence minOccurs="0"
+                     maxOccurs="unbounded">
+            <xs:element xmlns:q1="http://rosleshoz.gov.ru/xmlns/cTypes/3.1"
+                        name="file"
+                        type="q1:file" />
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="serviceInfo">
+        <xs:annotation>
+            <xs:documentation>Служебная информация услуги</xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+            <xs:element name="provider"
+                        type="xs:string">
+                <xs:annotation>
+                    <xs:documentation>Идентификатор информационной системы поставщика данных</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="version"
+                        type="xs:string"
+                        default="3.0">
+                <xs:annotation>
+                    <xs:documentation>Версия схемы обмена</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="name">
+                <xs:annotation>
+                    <xs:documentation>Наименование схемы обмена</xs:documentation>
+                </xs:annotation>
+                <xs:simpleType>
+                    <xs:restriction base="xs:string">
+                        <xs:enumeration value="forestDeclaration" />
+                        <xs:enumeration value="forestUsageReport" />
+                        <xs:enumeration value="forestFireSecurity" />
+                        <xs:enumeration value="forestProtection" />
+                        <xs:enumeration value="forestReproduction" />
+                        <xs:enumeration value="forestPathologyReport" />
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:element>
+            <xs:element name="guid"
+                        xmlns:q1="http://rosleshoz.gov.ru/xmlns/sTypes/3.1"
+                        type="q1:guid"
+                        minOccurs="0"
+                        default="51a51362-192a-45c6-8947-33e97f420dbf">
+                <xs:annotation>
+                    <xs:documentation>Уникальный идентификатор документа</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+        </xs:sequence>
+    </xs:complexType>
+</xs:schema>
