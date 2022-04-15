@@ -1,0 +1,469 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<!--Created with Liquid XML 2013 Designer Edition 11.1.0.4725 (http://www.liquid-technologies.com)-->
+<xs:schema xmlns:nsc="http://rosleshoz.gov.ru/xmlns/cTypes/3.1"
+           xmlns:ns0="http://rosleshoz.gov.ru/xmlns/sTypes/3.1"
+           elementFormDefault="qualified"
+           targetNamespace="http://rosleshoz.gov.ru/xmlns/catalogsTypes/3.1"
+           version="3.1"
+           xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:import schemaLocation="..\..\cTypes\3.1\cTypes.xsd"
+               namespace="http://rosleshoz.gov.ru/xmlns/cTypes/3.1" />
+    <xs:import schemaLocation="..\..\sTypes\3.1\sTypes.xsd"
+               namespace="http://rosleshoz.gov.ru/xmlns/sTypes/3.1" />
+    <xs:complexType name="subject">
+        <xs:annotation>
+            <xs:documentation>Субъекты РФ</xs:documentation>
+        </xs:annotation>
+        <xs:complexContent>
+            <xs:extension xmlns:q1="http://rosleshoz.gov.ru/xmlns/cTypes/3.1"
+                          base="q1:reference" />
+        </xs:complexContent>
+    </xs:complexType>
+    <xs:complexType name="landType">
+        <xs:annotation>
+            <xs:documentation>Виды земель</xs:documentation>
+        </xs:annotation>
+        <xs:complexContent>
+            <xs:extension xmlns:q1="http://rosleshoz.gov.ru/xmlns/cTypes/3.1"
+                          base="q1:reference" />
+        </xs:complexContent>
+    </xs:complexType>
+    <xs:complexType name="forestArea">
+        <xs:annotation>
+            <xs:documentation>Лесные районы</xs:documentation>
+        </xs:annotation>
+        <xs:complexContent>
+            <xs:extension xmlns:q1="http://rosleshoz.gov.ru/xmlns/cTypes/3.1"
+                          base="q1:reference" />
+        </xs:complexContent>
+    </xs:complexType>
+    <xs:complexType name="executiveAuthority">
+        <xs:annotation>
+            <xs:documentation>Органы исполнительной власти</xs:documentation>
+        </xs:annotation>
+        <xs:complexContent>
+            <xs:extension xmlns:q1="http://rosleshoz.gov.ru/xmlns/cTypes/3.1"
+                          base="q1:reference">
+                <xs:sequence>
+                    <xs:element name="subject"
+                                type="q1:reference">
+                        <xs:annotation>
+                            <xs:documentation>Субъект РФ</xs:documentation>
+                        </xs:annotation>
+                    </xs:element>
+                    <xs:element name="landType"
+                                type="q1:reference">
+                        <xs:annotation>
+                            <xs:documentation>Вид земель</xs:documentation>
+                        </xs:annotation>
+                    </xs:element>
+                </xs:sequence>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+    <xs:complexType name="forestry">
+        <xs:annotation>
+            <xs:documentation>Лесничество</xs:documentation>
+        </xs:annotation>
+        <xs:complexContent>
+            <xs:extension xmlns:q2="http://rosleshoz.gov.ru/xmlns/cTypes/3.1"
+                          base="q2:reference">
+                <xs:sequence>
+                    <xs:element name="subject"
+                                type="q2:reference">
+                        <xs:annotation>
+                            <xs:documentation>Субъект РФ</xs:documentation>
+                        </xs:annotation>
+                    </xs:element>
+                    <xs:element name="landType"
+                                type="q2:reference">
+                        <xs:annotation>
+                            <xs:documentation>Вид земель</xs:documentation>
+                        </xs:annotation>
+                    </xs:element>
+                </xs:sequence>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+    <xs:complexType name="subforestry">
+        <xs:annotation>
+            <xs:documentation>Участковое лесничество</xs:documentation>
+        </xs:annotation>
+        <xs:complexContent>
+            <xs:extension xmlns:q3="http://rosleshoz.gov.ru/xmlns/cTypes/3.1"
+                          base="q3:reference">
+                <xs:sequence>
+                    <xs:element name="subject"
+                                type="q3:reference">
+                        <xs:annotation>
+                            <xs:documentation>Субъект РФ</xs:documentation>
+                        </xs:annotation>
+                    </xs:element>
+                    <xs:element name="forestry"
+                                type="q3:reference">
+                        <xs:annotation>
+                            <xs:documentation>Лесничество</xs:documentation>
+                        </xs:annotation>
+                    </xs:element>
+                </xs:sequence>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+    <xs:complexType name="tract">
+        <xs:annotation>
+            <xs:documentation>Урочища</xs:documentation>
+        </xs:annotation>
+        <xs:complexContent>
+            <xs:extension xmlns:q4="http://rosleshoz.gov.ru/xmlns/cTypes/3.1"
+                          base="q4:reference">
+                <xs:sequence>
+                    <xs:element name="subject"
+                                type="q4:reference">
+                        <xs:annotation>
+                            <xs:documentation>Субъект РФ</xs:documentation>
+                        </xs:annotation>
+                    </xs:element>
+                    <xs:element name="subforestry"
+                                type="q4:reference">
+                        <xs:annotation>
+                            <xs:documentation>Участковое лесничество</xs:documentation>
+                        </xs:annotation>
+                    </xs:element>
+                </xs:sequence>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+    <xs:complexType name="tree">
+        <xs:annotation>
+            <xs:documentation>Древесные породы</xs:documentation>
+        </xs:annotation>
+        <xs:complexContent>
+            <xs:extension xmlns:q5="http://rosleshoz.gov.ru/xmlns/cTypes/3.1"
+                          base="q5:reference">
+                <xs:sequence>
+                    <xs:element name="abbreviation"
+                                type="xs:string">
+                        <xs:annotation>
+                            <xs:documentation>Сокращение</xs:documentation>
+                        </xs:annotation>
+                    </xs:element>
+                </xs:sequence>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+    <xs:complexType name="wood">
+        <xs:annotation>
+            <xs:documentation>Виды древесины</xs:documentation>
+        </xs:annotation>
+        <xs:complexContent>
+            <xs:extension xmlns:q6="http://rosleshoz.gov.ru/xmlns/cTypes/3.1"
+                          base="q6:reference">
+                <xs:sequence>
+                    <xs:element name="okpd"
+                                type="xs:string">
+                        <xs:annotation>
+                            <xs:documentation>Код ОКПД</xs:documentation>
+                        </xs:annotation>
+                    </xs:element>
+                    <xs:element name="tnved"
+                                type="xs:string">
+                        <xs:annotation>
+                            <xs:documentation>Код ТН ВЭД</xs:documentation>
+                        </xs:annotation>
+                    </xs:element>
+                </xs:sequence>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+    <xs:complexType name="sortiment">
+        <xs:annotation>
+            <xs:documentation>Сортименты</xs:documentation>
+        </xs:annotation>
+        <xs:complexContent>
+            <xs:extension xmlns:q7="http://rosleshoz.gov.ru/xmlns/cTypes/3.1"
+                          base="q7:reference" />
+        </xs:complexContent>
+    </xs:complexType>
+    <xs:complexType name="typeCutting">
+        <xs:annotation>
+            <xs:documentation>Вид рубки</xs:documentation>
+        </xs:annotation>
+        <xs:complexContent>
+            <xs:extension xmlns:q8="http://rosleshoz.gov.ru/xmlns/cTypes/3.1"
+                          base="q8:reference" />
+        </xs:complexContent>
+    </xs:complexType>
+    <xs:complexType name="bonitet">
+        <xs:annotation>
+            <xs:documentation>Бонитет</xs:documentation>
+        </xs:annotation>
+        <xs:complexContent>
+            <xs:extension xmlns:q8="http://rosleshoz.gov.ru/xmlns/cTypes/3.1"
+                          base="q8:reference" />
+        </xs:complexContent>
+    </xs:complexType>
+    <xs:complexType name="unitType">
+        <xs:annotation>
+            <xs:documentation>Единицы измерения</xs:documentation>
+        </xs:annotation>
+        <xs:complexContent>
+            <xs:extension xmlns:q9="http://rosleshoz.gov.ru/xmlns/cTypes/3.1"
+                          base="q9:reference">
+                <xs:sequence>
+                    <xs:element name="abbreviation"
+                                type="xs:string">
+                        <xs:annotation>
+                            <xs:documentation>Сокращение</xs:documentation>
+                        </xs:annotation>
+                    </xs:element>
+                </xs:sequence>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+    <xs:complexType name="usageType">
+        <xs:annotation>
+            <xs:documentation>Вид использования</xs:documentation>
+        </xs:annotation>
+        <xs:complexContent>
+            <xs:extension xmlns:q10="http://rosleshoz.gov.ru/xmlns/cTypes/3.1"
+                          base="q10:reference" />
+        </xs:complexContent>
+    </xs:complexType>
+    <xs:complexType name="resource">
+        <xs:annotation>
+            <xs:documentation>Вид заготавливаемых лесных ресурсов</xs:documentation>
+        </xs:annotation>
+        <xs:complexContent>
+            <xs:extension xmlns:q11="http://rosleshoz.gov.ru/xmlns/cTypes/3.1"
+                          base="q11:reference">
+                <xs:sequence>
+                    <xs:element name="usageType"
+                                type="q11:reference">
+                        <xs:annotation>
+                            <xs:documentation>Вид использования лесов</xs:documentation>
+                        </xs:annotation>
+                    </xs:element>
+                </xs:sequence>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+    <xs:complexType name="measure">
+        <xs:annotation>
+            <xs:documentation>Виды мероприятий</xs:documentation>
+        </xs:annotation>
+        <xs:complexContent>
+            <xs:extension xmlns:q12="http://rosleshoz.gov.ru/xmlns/cTypes/3.1"
+                          base="q12:reference" />
+        </xs:complexContent>
+    </xs:complexType>
+    <xs:complexType name="object">
+        <xs:annotation>
+            <xs:documentation>Объекты инфраструктуры</xs:documentation>
+        </xs:annotation>
+        <xs:complexContent>
+            <xs:extension xmlns:q13="http://rosleshoz.gov.ru/xmlns/cTypes/3.1"
+                          base="q13:reference">
+                <xs:sequence>
+                    <xs:element name="typeObject"
+                                type="ns0:typeObject" />
+                </xs:sequence>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+    <xs:complexType name="specialPurpose">
+        <xs:annotation>
+            <xs:documentation>Целевые назначения лесов</xs:documentation>
+        </xs:annotation>
+        <xs:complexContent>
+            <xs:extension xmlns:q14="http://rosleshoz.gov.ru/xmlns/cTypes/3.1"
+                          base="q14:reference" />
+        </xs:complexContent>
+    </xs:complexType>
+    <xs:complexType name="protectionCategory">
+        <xs:annotation>
+            <xs:documentation>Категории защитных лесов</xs:documentation>
+        </xs:annotation>
+        <xs:complexContent>
+            <xs:extension xmlns:q15="http://rosleshoz.gov.ru/xmlns/cTypes/3.1"
+                          base="q15:reference">
+                <xs:sequence>
+                    <xs:element name="parent"
+                                type="q15:reference">
+                        <xs:annotation>
+                            <xs:documentation>Родительский показатель</xs:documentation>
+                        </xs:annotation>
+                    </xs:element>
+                </xs:sequence>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+    <xs:complexType name="reportRate">
+        <xs:annotation>
+            <xs:documentation>Показатели отчетов</xs:documentation>
+        </xs:annotation>
+        <xs:complexContent>
+            <xs:extension xmlns:q4="http://rosleshoz.gov.ru/xmlns/cTypes/3.1"
+                          base="q4:reference">
+                <xs:sequence>
+                    <xs:element name="parent"
+                                type="q4:reference">
+                        <xs:annotation>
+                            <xs:documentation>Родительский показатель</xs:documentation>
+                        </xs:annotation>
+                    </xs:element>
+                    <xs:element xmlns:q1="http://rosleshoz.gov.ru/xmlns/catalogsTypes/3.1"
+                                name="reportRateType"
+                                type="q4:reference">
+                        <xs:annotation>
+                            <xs:documentation>Вид показателя</xs:documentation>
+                        </xs:annotation>
+                    </xs:element>
+                    <xs:element xmlns:q6="forestUsageReport"
+                                name="unitType"
+                                type="q4:reference">
+                        <xs:annotation>
+                            <xs:documentation>Единица измерения</xs:documentation>
+                        </xs:annotation>
+                    </xs:element>
+                    <xs:element name="codeLine"
+                                type="xs:string">
+                        <xs:annotation>
+                            <xs:documentation>Код строки отчета</xs:documentation>
+                        </xs:annotation>
+                    </xs:element>
+                </xs:sequence>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+    <xs:complexType name="reportRateType">
+        <xs:annotation>
+            <xs:documentation>Группы показателей отчетов</xs:documentation>
+        </xs:annotation>
+        <xs:complexContent>
+            <xs:extension xmlns:q4="http://rosleshoz.gov.ru/xmlns/cTypes/3.1"
+                          base="q4:reference" />
+        </xs:complexContent>
+    </xs:complexType>
+    <xs:complexType name="municipalDistrict">
+        <xs:annotation>
+            <xs:documentation>Муниципальные образования</xs:documentation>
+        </xs:annotation>
+        <xs:complexContent>
+            <xs:extension xmlns:q6="http://rosleshoz.gov.ru/xmlns/cTypes/3.1"
+                          base="q6:reference">
+                <xs:sequence>
+                    <xs:element name="parent"
+                                type="q6:reference"
+                                minOccurs="0">
+                        <xs:annotation>
+                            <xs:documentation>Родительский показатель</xs:documentation>
+                        </xs:annotation>
+                    </xs:element>
+                    <xs:element name="type"
+                                type="ns0:municipalDistrictType"
+                                minOccurs="0">
+                        <xs:annotation>
+                            <xs:documentation>Тип муниципального образования</xs:documentation>
+                        </xs:annotation>
+                    </xs:element>
+                </xs:sequence>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+    <xs:complexType name="damageReason">
+        <xs:annotation>
+            <xs:documentation>Причина повреждения</xs:documentation>
+        </xs:annotation>
+        <xs:complexContent>
+            <xs:extension xmlns:q1="http://rosleshoz.gov.ru/xmlns/cTypes/3.1"
+                          base="q1:reference">
+                <xs:sequence>
+                    <xs:element name="reduction"
+                                type="xs:string">
+                        <xs:annotation>
+                            <xs:documentation>Сокращенное наименование болезни или вредителя</xs:documentation>
+                        </xs:annotation>
+                    </xs:element>
+                    <xs:element name="parent"
+                                type="q1:reference">
+                        <xs:annotation>
+                            <xs:documentation>Группы причин</xs:documentation>
+                        </xs:annotation>
+                    </xs:element>
+                </xs:sequence>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+    <xs:complexType name="damageSymptom">
+        <xs:annotation>
+            <xs:documentation>Признак повреждения</xs:documentation>
+        </xs:annotation>
+        <xs:complexContent>
+            <xs:extension xmlns:q1="http://rosleshoz.gov.ru/xmlns/cTypes/3.1"
+                          base="q1:reference">
+                <xs:sequence>
+                    <xs:element name="parent"
+                                type="q1:reference">
+                        <xs:annotation>
+                            <xs:documentation>Группы признаков</xs:documentation>
+                        </xs:annotation>
+                    </xs:element>
+                </xs:sequence>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+    <xs:complexType name="treeStateCategory">
+        <xs:annotation>
+            <xs:documentation>Категория состояния деревьев</xs:documentation>
+        </xs:annotation>
+        <xs:complexContent>
+            <xs:extension xmlns:q1="http://rosleshoz.gov.ru/xmlns/cTypes/3.1"
+                          base="q1:reference" />
+        </xs:complexContent>
+    </xs:complexType>
+    <xs:complexType name="event">
+        <xs:annotation>
+            <xs:documentation>Мероприятия по защите лесов</xs:documentation>
+        </xs:annotation>
+        <xs:complexContent>
+            <xs:extension xmlns:q1="http://rosleshoz.gov.ru/xmlns/cTypes/3.1"
+                          base="q1:reference" />
+        </xs:complexContent>
+    </xs:complexType>
+    <xs:complexType name="pestSourceGrowthPhase">
+        <xs:annotation>
+            <xs:documentation>Фазы развития очага вредных организмов</xs:documentation>
+        </xs:annotation>
+        <xs:complexContent>
+            <xs:extension xmlns:q1="http://rosleshoz.gov.ru/xmlns/cTypes/3.1"
+                          base="q1:reference" />
+        </xs:complexContent>
+    </xs:complexType>
+    <xs:complexType name="nameLand">
+        <xs:annotation>
+            <xs:documentation>Наименования земель лесного фонда</xs:documentation>
+        </xs:annotation>
+        <xs:complexContent>
+            <xs:extension xmlns:q1="http://rosleshoz.gov.ru/xmlns/cTypes/3.1"
+                          base="q1:reference" />
+        </xs:complexContent>
+    </xs:complexType>
+    <xs:complexType name="especiallyProtectiveArea">
+        <xs:annotation>
+            <xs:documentation>Особо-защитные участки (ОЗУ)</xs:documentation>
+        </xs:annotation>
+        <xs:complexContent>
+            <xs:extension xmlns:q1="http://rosleshoz.gov.ru/xmlns/cTypes/3.1"
+                          base="q1:reference" />
+        </xs:complexContent>
+    </xs:complexType>
+    <xs:complexType name="floor">
+        <xs:annotation>
+            <xs:documentation>Ярусы насаждений.</xs:documentation>
+        </xs:annotation>
+        <xs:complexContent>
+            <xs:extension xmlns:q1="http://rosleshoz.gov.ru/xmlns/cTypes/3.1"
+                          base="q1:reference" />
+        </xs:complexContent>
+    </xs:complexType>
+</xs:schema>
