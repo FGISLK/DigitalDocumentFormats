@@ -1,0 +1,197 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<!--Created with Liquid XML 2013 Designer Edition 11.1.0.4725 (http://www.liquid-technologies.com)-->
+<xs:schema elementFormDefault="qualified"
+           targetNamespace="http://rosleshoz.gov.ru/xmlns/sTypes/4.1"
+           version="4.1"
+           xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:simpleType name="formCutting">
+        <xs:annotation>
+            <xs:documentation>Формы рубок</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="Сплошная рубка" />
+            <xs:enumeration value="Выборочная рубка" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="farm">
+        <xs:annotation>
+            <xs:documentation>Хозяйства</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="Мягколиственное" />
+            <xs:enumeration value="Твердолиственное" />
+            <xs:enumeration value="Хвойное" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="typeObject">
+        <xs:annotation>
+            <xs:documentation>Типы объектов мероприятий</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="Объекты лесной инфраструктуры" />
+            <xs:enumeration value="Объекты лесного семеноводства" />
+            <xs:enumeration value="Объекты, не связанные с созданием лесной инфраструктуры" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="taxationMethod">
+        <xs:annotation>
+            <xs:documentation>Методы таксации (СОМ)</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="Сплошной перечет" />
+            <xs:enumeration value="Ленточный перечет" />
+            <xs:enumeration value="Круговые площадки постоянного радиуса" />
+            <xs:enumeration value="Реласкопические площадки" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="contractType">
+        <xs:annotation>
+            <xs:documentation>Виды документов</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:string" />
+    </xs:simpleType>
+    <xs:simpleType name="municipalDistrictType">
+        <xs:annotation>
+            <xs:documentation>Типы муниципальных образований</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="Регион" />
+            <xs:enumeration value="Район/Город" />
+            <xs:enumeration value="Поселение" />
+            <xs:enumeration value="Населенный пункт" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="year">
+        <xs:annotation>
+            <xs:documentation>Год</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:int" />
+    </xs:simpleType>
+    <xs:simpleType name="guid">
+        <xs:annotation>
+            <xs:documentation>Простой тип - Уникальный идентификатор</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:string">
+            <xs:pattern value="[a-fA-F0-9]{8}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{12}" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="objectNumber">
+        <xs:annotation>
+            <xs:documentation>Номер объекта</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:string">
+            <xs:minLength value="0" />
+            <xs:maxLength value="50" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="area">
+        <xs:annotation>
+            <xs:documentation>Площадь</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:decimal">
+            <xs:minInclusive value="0.000000" />
+            <xs:fractionDigits value="6" />
+            <xs:totalDigits value="17" />
+            <xs:maxInclusive value="9999999999.999999" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="areaCutting">
+        <xs:annotation>
+            <xs:documentation>Площадь заготовки</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:decimal">
+            <xs:minInclusive value="0.0000" />
+            <xs:fractionDigits value="4" />
+            <xs:totalDigits value="15" />
+            <xs:maxInclusive value="9999999999.9999" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="valueCutting">
+        <xs:annotation>
+            <xs:documentation>Объем древесины/живицы</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:decimal">
+            <xs:totalDigits value="10" />
+            <xs:fractionDigits value="2" />
+            <xs:minInclusive value="0.00" />
+            <xs:maxInclusive value="9999999.99" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="cuttingArea">
+        <xs:annotation>
+            <xs:documentation>Номер лесосеки</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:string">
+            <xs:maxLength value="10" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="taxationUnit">
+        <xs:annotation>
+            <xs:documentation>Таксационный выдел</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:string" />
+    </xs:simpleType>
+    <xs:simpleType name="quarter">
+        <xs:annotation>
+            <xs:documentation>Квартал</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:string" />
+    </xs:simpleType>
+    <xs:simpleType name="percent">
+        <xs:annotation>
+            <xs:documentation>Процент</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:decimal">
+            <xs:fractionDigits value="2" />
+            <xs:totalDigits value="5" />
+            <xs:minInclusive value="0.00" />
+            <xs:maxInclusive value="100.00" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="completeness">
+        <xs:annotation>
+            <xs:documentation>Полнота</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:decimal">
+            <xs:minInclusive value="0.0" />
+            <xs:maxInclusive value="1.0" />
+            <xs:totalDigits value="2" />
+            <xs:fractionDigits value="1" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="coordinateSystem">
+        <xs:annotation>
+            <xs:documentation>Описание системы координат</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:string" />
+    </xs:simpleType>
+    <xs:simpleType name="forestUsageVolume">
+        <xs:annotation>
+            <xs:documentation>Объем использования лесов, не связанный с заготовкой древесины и живицы</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:decimal">
+            <xs:totalDigits value="15" />
+            <xs:fractionDigits value="4" />
+            <xs:minInclusive value="0.0000" />
+            <xs:maxInclusive value="9999999999.9999" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="ageGroup">
+        <xs:annotation>
+            <xs:documentation>Группы возраста. 
+Возмодные значения:
+1 - Молодняки;
+2 - Средневозрастные;
+3 - Приспевающие;
+4 - Спелые;
+5 - Перестойные</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:int">
+            <xs:enumeration value="1" />
+            <xs:enumeration value="2" />
+            <xs:enumeration value="3" />
+            <xs:enumeration value="4" />
+            <xs:enumeration value="5" />
+        </xs:restriction>
+    </xs:simpleType>
+</xs:schema>
